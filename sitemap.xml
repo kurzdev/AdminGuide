@@ -1,111 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://felbinger.github.io/AdminGuide/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/installation/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/installation/dns/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/installation/docker/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/installation/stack-logic/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/services/traefik/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/services/nginx-proxy/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/services/docky-onion/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/services/nginx/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/services/httpd/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/services/httpd-php/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/services/mariadb/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/services/mongodb/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/services/postgresql/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/services/redis/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/services/openldap/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/services/minecraft/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/services/arma3/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/services/teamspeak/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/services/matrix/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/services/element/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/services/jitsi/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/services/syncthing/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/services/sharelatex/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/services/hackmd/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/services/calibre/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://felbinger.github.io/AdminGuide/services/monitoring/</loc>
-     <lastmod>2021-02-06</lastmod>
+     <lastmod>2021-02-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
