@@ -797,11 +797,14 @@
 <div class="highlight"><pre><span></span><code>curl -fsSL https://get.docker.com <span class="p">|</span> sudo bash
 </code></pre></div>
 <p>Finally, you need to install Docker Compose:</p>
-<div class="highlight"><pre><span></span><code>sudo curl -L -o /usr/local/bin/docker-compose <span class="se">\</span>
+<p><div class="highlight"><pre><span></span><code>sudo curl -L -o /usr/local/bin/docker-compose <span class="se">\</span>
   <span class="s2">&quot;https://github.com/docker/compose/releases/latest/download/docker-compose-</span><span class="k">$(</span>uname -s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname -m<span class="k">)</span><span class="s2">&quot;</span>
 sudo chmod +x /usr/local/bin/docker-compose
 </code></pre></div>
-<p>Instead of typing <code>sudo docker-compose up -d</code> all the time you can use this alias and type <code>dc up -d</code>:</p>
+On an ARM Maschine you need:
+<div class="highlight"><pre><span></span><code>pip install docker-compose
+</code></pre></div>
+Instead of typing <code>sudo docker-compose up -d</code> all the time you can use this alias and type <code>dc up -d</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s1">&#39;alias dc=&quot;sudo docker-compose &quot;&#39;</span> &gt;&gt; ~/.bashrc
 </code></pre></div>
 <details>
@@ -844,7 +847,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 7, 2021</span>
     
   </small>
 </div>
