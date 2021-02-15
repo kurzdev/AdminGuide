@@ -1108,7 +1108,7 @@ sudo chmod +x /usr/local/bin/ctop
   -O /usr/local/bin/dnv
 sudo chmod +x /usr/local/bin/dnv
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>$ sudo ./dnv
+<div class="highlight"><pre><span></span><code>$ sudo dnv
 bridge          <span class="m">172</span>.17.0.0/16
 proxy           <span class="m">192</span>.168.0.0/24
 database        <span class="m">192</span>.168.1.0/24
@@ -1178,6 +1178,12 @@ mariadb&gt; EXIT<span class="p">;</span>
 </code></pre></div></p>
 <h3 id="borg-backup">Borg Backup<a class="headerlink" href="#borg-backup" title="Permanent link">&para;</a></h3>
 <p>Like I mentioned above, I'm currently using borg for file backups. Checkout the <a href="https://borgbackup.readthedocs.io/en/stable/#easy-to-use">official documentation</a></p>
+<p>Create a backup repository:
+<div class="highlight"><pre><span></span><code>borg init -e repokey /home/borg
+</code></pre></div></p>
+<p>Don't forget to export the repokey and save it somewhere safe!
+<div class="highlight"><pre><span></span><code>borg key <span class="nb">export</span> /home/borg /home/user/borg.repokey
+</code></pre></div></p>
 <p>I created a script to perform the backups:
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
