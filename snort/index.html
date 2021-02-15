@@ -13,21 +13,21 @@
         <meta name="author" content="https://github.com/felbinger">
       
       
-        <link rel="canonical" href="https://felbinger.github.io/AdminGuide/installation/docker/">
+        <link rel="canonical" href="https://felbinger.github.io/AdminGuide/snort/">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
       
-        <title>Docker - Admin Guide</title>
+        <title>Snort 3 (NIDS) - Admin Guide</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.cb6bc1d0.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.cb6bc1d0.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
         
           
           
@@ -46,7 +46,7 @@
     
     
     
-      <link rel="stylesheet" href="../../css/asciinema-player.css">
+      <link rel="stylesheet" href="../css/asciinema-player.css">
     
     
       
@@ -70,6 +70,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#installation" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -99,7 +104,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Docker
+              Snort 3 (NIDS)
             
           </span>
         </div>
@@ -205,7 +210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         Overview
       </a>
     </li>
@@ -220,7 +225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backup/" class="md-nav__link">
+      <a href="../backup/" class="md-nav__link">
         Backup
       </a>
     </li>
@@ -233,11 +238,113 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../snort/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Snort 3 (NIDS)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Snort 3 (NIDS)
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-interfaces" class="md-nav__link">
+    Network interfaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snort-ruleset" class="md-nav__link">
+    Snort Ruleset
+  </a>
+  
+    <nav class="md-nav" aria-label="Snort Ruleset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure" class="md-nav__link">
+    Configure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    Run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-cronjob" class="md-nav__link">
+    Create Cronjob
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snort-plugins" class="md-nav__link">
+    Snort Plugins
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -248,16 +355,14 @@
 
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" data-md-state="indeterminate" type="checkbox" id="nav-4" checked>
       
       <label class="md-nav__link" for="nav-4">
         Installation
@@ -276,7 +381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../installation/" class="md-nav__link">
         Base
       </a>
     </li>
@@ -288,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dns/" class="md-nav__link">
+      <a href="../installation/dns/" class="md-nav__link">
         Configure DNS
       </a>
     </li>
@@ -298,18 +403,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../installation/docker/" class="md-nav__link">
         Docker
       </a>
-      
     </li>
   
 
@@ -319,7 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../stack-logic/" class="md-nav__link">
+      <a href="../installation/stack-logic/" class="md-nav__link">
         Stack Logic
       </a>
     </li>
@@ -331,7 +429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../postinstall/" class="md-nav__link">
+      <a href="../installation/postinstall/" class="md-nav__link">
         Postinstall Script
       </a>
     </li>
@@ -398,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/traefik/" class="md-nav__link">
+      <a href="../services/traefik/" class="md-nav__link">
         Traefik
       </a>
     </li>
@@ -410,7 +508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/nginx-proxy/" class="md-nav__link">
+      <a href="../services/nginx-proxy/" class="md-nav__link">
         nginx/proxy
       </a>
     </li>
@@ -422,7 +520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/docky-onion/" class="md-nav__link">
+      <a href="../services/docky-onion/" class="md-nav__link">
         docky-onion
       </a>
     </li>
@@ -462,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/nginx/" class="md-nav__link">
+      <a href="../services/nginx/" class="md-nav__link">
         nginx
       </a>
     </li>
@@ -474,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/httpd/" class="md-nav__link">
+      <a href="../services/httpd/" class="md-nav__link">
         httpd
       </a>
     </li>
@@ -486,7 +584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/httpd-php/" class="md-nav__link">
+      <a href="../services/httpd-php/" class="md-nav__link">
         httpd with php
       </a>
     </li>
@@ -526,7 +624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/mariadb/" class="md-nav__link">
+      <a href="../services/mariadb/" class="md-nav__link">
         MariaDB
       </a>
     </li>
@@ -538,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/mongodb/" class="md-nav__link">
+      <a href="../services/mongodb/" class="md-nav__link">
         MongoDB
       </a>
     </li>
@@ -550,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/postgresql/" class="md-nav__link">
+      <a href="../services/postgresql/" class="md-nav__link">
         PostgreSQL
       </a>
     </li>
@@ -562,7 +660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/redis/" class="md-nav__link">
+      <a href="../services/redis/" class="md-nav__link">
         Redis
       </a>
     </li>
@@ -574,7 +672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/openldap/" class="md-nav__link">
+      <a href="../services/openldap/" class="md-nav__link">
         OpenLDAP
       </a>
     </li>
@@ -614,7 +712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/minecraft/" class="md-nav__link">
+      <a href="../services/minecraft/" class="md-nav__link">
         Minecraft
       </a>
     </li>
@@ -626,7 +724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/arma3/" class="md-nav__link">
+      <a href="../services/arma3/" class="md-nav__link">
         Arma 3 Server
       </a>
     </li>
@@ -666,7 +764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/teamspeak/" class="md-nav__link">
+      <a href="../services/teamspeak/" class="md-nav__link">
         Teamspeak 3 + Sinusbot
       </a>
     </li>
@@ -678,7 +776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/matrix/" class="md-nav__link">
+      <a href="../services/matrix/" class="md-nav__link">
         Matrix
       </a>
     </li>
@@ -690,7 +788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/element/" class="md-nav__link">
+      <a href="../services/element/" class="md-nav__link">
         Element
       </a>
     </li>
@@ -702,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/jitsi/" class="md-nav__link">
+      <a href="../services/jitsi/" class="md-nav__link">
         Jitsi
       </a>
     </li>
@@ -742,7 +840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/syncthing/" class="md-nav__link">
+      <a href="../services/syncthing/" class="md-nav__link">
         Syncthing
       </a>
     </li>
@@ -754,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/sharelatex/" class="md-nav__link">
+      <a href="../services/sharelatex/" class="md-nav__link">
         ShareLaTeX
       </a>
     </li>
@@ -766,7 +864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/hackmd/" class="md-nav__link">
+      <a href="../services/hackmd/" class="md-nav__link">
         HackMD
       </a>
     </li>
@@ -778,7 +876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/calibre/" class="md-nav__link">
+      <a href="../services/calibre/" class="md-nav__link">
         Calibre
       </a>
     </li>
@@ -790,7 +888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/gitea/" class="md-nav__link">
+      <a href="../services/gitea/" class="md-nav__link">
         Gitea
       </a>
     </li>
@@ -830,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/grafana/" class="md-nav__link">
+      <a href="../services/grafana/" class="md-nav__link">
         Grafana
       </a>
     </li>
@@ -842,7 +940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/influxdb/" class="md-nav__link">
+      <a href="../services/influxdb/" class="md-nav__link">
         InfluxDB + Telegraf
       </a>
     </li>
@@ -854,7 +952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/prometheus/" class="md-nav__link">
+      <a href="../services/prometheus/" class="md-nav__link">
         Prometheus
       </a>
     </li>
@@ -866,7 +964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/loki/" class="md-nav__link">
+      <a href="../services/loki/" class="md-nav__link">
         Loki (collect logs)
       </a>
     </li>
@@ -892,73 +990,301 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-interfaces" class="md-nav__link">
+    Network interfaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snort-ruleset" class="md-nav__link">
+    Snort Ruleset
+  </a>
+  
+    <nav class="md-nav" aria-label="Snort Ruleset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure" class="md-nav__link">
+    Configure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    Run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-cronjob" class="md-nav__link">
+    Create Cronjob
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snort-plugins" class="md-nav__link">
+    Snort Plugins
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/felbinger/AdminGuide/edit/master/docs/installation/docker.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/felbinger/AdminGuide/edit/master/docs/snort.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Docker</h1>
+                  <h1>Snort 3 (NIDS)</h1>
                 
-                <div class="admonition note">
-<p class="admonition-title">Old Docker Versions</p>
-<blockquote>
-<p><a href="https://stackoverflow.com/a/45023650">Older versions of the Docker binary were called docker or docker-engine or docker-io</a></p>
-</blockquote>
-<p>If you already installed this version you can uninstall it via:
-<div class="highlight"><pre><span></span><code>sudo apt-get remove docker docker-engine docker.io containerd runc
-</code></pre></div></p>
+                <p><a href="https://www.snort.org/snort3">Snort</a> is a open source Network Intrusion Detection &amp; Prevention system,
+checkout the resources section on their page!</p>
+<p><a href="https://snort-org-site.s3.amazonaws.com/production/document_files/files/000/003/979/original/Snort3_3.1.0.0_on_Ubuntu_18___20.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIXACIED2SPMSC7GA%2F20210215%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210215T132857Z&amp;X-Amz-Expires=172800&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=b89786f8d04c6b5270176ad658bd6627a525427e05041d6cc819d0fb585817bd">Installation Guide for Snort 3.1.0.0</a></p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>sudo apt-get install -y build-essential autotools-dev libdumbnet-dev libluajit-5.1-dev libpcap-dev <span class="se">\</span>
+zlib1g-dev pkg-config libhwloc-dev cmake liblzma-dev openssl libssl-dev cpputest libsqlite3-dev <span class="se">\</span>
+libtool uuid-dev git autoconf bison flex libcmocka-dev libnetfilter-queue-dev libunwind-dev <span class="se">\</span>
+libmnl-dev ethtool
+
+mkdir snort_src
+<span class="nb">cd</span> snort_src
+
+wget -O- https://github.com/rurban/safeclib/releases/download/v02092020/libsafec-02092020.tar.gz <span class="p">|</span> tar xz
+<span class="nb">cd</span> libsafec-02092020.0-g6d921f
+./configure
+make
+sudo make install
+<span class="nb">cd</span> ..
+
+wget -O- https://ftp.pcre.org/pub/pcre/pcre-8.44.tar.gz <span class="p">|</span> tar xz
+<span class="nb">cd</span> pcre-8.44
+./configure
+make
+sudo make install
+<span class="nb">cd</span> ..
+
+wget -O- https://github.com/gperftools/gperftools/releases/download/gperftools-2.8/gperftools-2.8.tar.gz <span class="p">|</span> tar xz
+<span class="nb">cd</span> gperftools-2.8
+./configure
+make
+sudo make install
+<span class="nb">cd</span> ..
+
+wget -O- http://www.colm.net/files/ragel/ragel-6.10.tar.gz <span class="p">|</span> tar xz
+<span class="nb">cd</span> ragel-6.10
+./configure
+make
+sudo make install
+<span class="nb">cd</span> ..
+
+wget -O- https://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.tar.gz <span class="p">|</span> tar xz
+
+wget https://github.com/intel/hyperscan/archive/v5.3.0.tar.gz <span class="p">|</span> tar xz
+mkdir hyperscan-5.3.0-build
+<span class="nb">cd</span> hyperscan-5.3.0-build/
+cmake -DCMAKE_INSTALL_PREFIX<span class="o">=</span>/usr/local -DBOOST_ROOT<span class="o">=</span>../boost_1_74_0/ ../hyperscan-5.3.0
+make
+sudo make install
+<span class="nb">cd</span> ..
+
+
+wget -O- https://github.com/google/flatbuffers/archive/v1.12.0.tar.gz <span class="p">|</span> tar xz
+mkdir flatbuffers-1.12.0/build
+<span class="nb">cd</span> flatbuffers-1.12.0/build
+cmake ..
+make
+sudo make install
+<span class="nb">cd</span> ../..
+
+wget -O- https://www.snort.org/downloads/snortplus/libdaq-3.0.0.tar.gz <span class="p">|</span> tar xz
+<span class="nb">cd</span> libdaq-3.0.0
+./bootstrap
+./configure
+make
+sudo make install
+<span class="nb">cd</span> ..
+
+sudo ldconfig
+
+wget -O- https://www.snort.org/downloads/snortplus/snort3-3.1.0.0.tar.gz <span class="p">|</span> tar xz
+<span class="nb">cd</span> snort3-3.1.0.0
+<span class="c1"># installation guide does not enable: shell / large-pcap</span>
+./configure_cmake.sh --prefix<span class="o">=</span>/usr/local --enable-tcmalloc --enable-shell --enable-large-pcap
+<span class="nb">cd</span> build
+make
+sudo make install
+<span class="nb">cd</span> ../..
+
+<span class="nb">cd</span> ..
+<span class="c1"># due to the fact that the snort_src folder has arround 6 gb you may would like to delete it</span>
+<span class="c1">#rm -r snort_src</span>
+
+/usr/local/bin/snort -V
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  snort -c /usr/local/etc/snort/snort.lua
+<span class="k">fi</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Remove unused tools</p>
+<p>I suggest you to remove all unnessesary tools, after compilation.
+If you have all bunch of compilers, language interpreters, and so on installed on your system,
+you might help a potential hacker who has access to your system to gain higher privileges.</p>
 </div>
-<p>Docker itself already provides a very good script:</p>
-<div class="highlight"><pre><span></span><code>curl -fsSL https://get.docker.com <span class="p">|</span> sudo bash
-</code></pre></div>
-<p>Finally, you need to install Docker Compose:</p>
-<p><div class="highlight"><pre><span></span><code>sudo curl -L -o /usr/local/bin/docker-compose <span class="se">\</span>
-  <span class="s2">&quot;https://github.com/docker/compose/releases/latest/download/docker-compose-</span><span class="k">$(</span>uname -s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname -m<span class="k">)</span><span class="s2">&quot;</span>
-sudo chmod +x /usr/local/bin/docker-compose
-</code></pre></div>
-On an ARM Maschine you need:
-<div class="highlight"><pre><span></span><code>pip install docker-compose
-</code></pre></div>
-Instead of typing <code>sudo docker-compose up -d</code> all the time you can use this alias and type <code>dc up -d</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s1">&#39;alias dc=&quot;sudo docker-compose &quot;&#39;</span> &gt;&gt; ~/.bashrc
-</code></pre></div>
-<details>
-  <summary>Parts of the PostInstall script covered in this chapter</summary>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<h3 id="network-interfaces">Network interfaces<a class="headerlink" href="#network-interfaces" title="Permanent link">&para;</a></h3>
+<p>The guide explains why you probally want to disable GRO (generic-receive-offload) and LRO (large-receive-offload)
+on the network interfaces that are being monitored by snort.</p>
+<p>You can disable them with the ethtool command, but you need to create a systemd job to do this after every boot:
+1. Create the job <code>/lib/systemd/system/ethtool.service</code>
+(don't forget to adjust the name of the network interface)
+<div class="highlight"><pre><span></span><code><span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">ethtool configration for monitored network interfaces</span>
 
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="k">[Service]</span>
+<span class="na">Requires</span><span class="o">=</span><span class="s">network.target</span>
+<span class="na">Type</span><span class="o">=</span><span class="s">oneshot</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/sbin/ethtool -K eth0 gro off</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/sbin/ethtool -K eth0 lro off</span>
 
-<span class="k">function</span> install_docker_compose<span class="o">()</span> <span class="o">{</span>
-  curl -L <span class="s2">&quot;https://github.com/docker/compose/releases/download/latest/docker-compose-</span><span class="k">$(</span>uname -s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname -m<span class="k">)</span><span class="s2">&quot;</span> -o /usr/local/bin/docker-compose
-  chmod +x /usr/local/bin/docker-compose
-<span class="o">}</span>
+<span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</code></pre></div>
+2. Enable to systemd job:
+<div class="highlight"><pre><span></span><code>sudo systemctl enable --now ethtool
+</code></pre></div></p>
+<h3 id="snort-ruleset">Snort Ruleset<a class="headerlink" href="#snort-ruleset" title="Permanent link">&para;</a></h3>
+<p>Next you need to get some rules, I'm going to use the registered ruleset.
+Therefore you need to <a href="https://www.snort.org/users/sign_up">create an account</a>,
+afterwards you can <a href="https://www.snort.org/downloads#rules">download the rules</a>.</p>
+<div class="admonition warning">
+<p>In the past, I simply downloaded the rule once, but there is a great tool for updating.</p>
+<p>I didn't really get the idea from the author of the installation guide,
+to put the rules directly in the etc directory. So I first tried to put them inside the snort directory.</p>
+<p>This resulted in an error so I tried to do it like he did, but i keep getting the same error.
+I created an <a href="https://github.com/shirkdog/pulledpork/issues/359">issue</a> and will finish this entry when my snort instance is working correcly. Feel free to simply follow the installation guide, maybe I made a mistake somewhere.</p>
+</div>
+<h4 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>mkdir rules
+<span class="nb">cd</span> rules
+sudo apt-get install -y libcrypt-ssleay-perl liblwp-useragent-determined-perl
+wget -O- https://github.com/shirkdog/pulledpork/archive/master.tar.gz <span class="p">|</span> tar xz
+sudo cp pulledpork-master/pulledpork.pl /usr/local/bin
+sudo chmod +x /usr/local/bin/pulledpork.pl
+sudo mkdir /usr/local/etc/pulledpork
+sudo cp pulledpork-master/etc/*.conf /usr/local/etc/pulledpork
 
-<span class="k">function</span> docker_network_create<span class="o">()</span> <span class="o">{</span>
-  <span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">1</span><span class="si">}</span>
-  <span class="nv">subnet</span><span class="o">=</span><span class="si">${</span><span class="nv">2</span><span class="si">}</span>
-  docker network inspect <span class="si">${</span><span class="nv">name</span><span class="si">}</span> &gt;/dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="o">||</span> <span class="se">\</span>
-  docker network create --subnet <span class="si">${</span><span class="nv">subnet</span><span class="si">}</span> <span class="si">${</span><span class="nv">name</span><span class="si">}</span>
-<span class="o">}</span>
-
-<span class="c1"># install docker if not already installed</span>
-<span class="k">if</span> <span class="o">[[</span> -z <span class="k">$(</span>which docker<span class="k">)</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="k">if</span> <span class="o">[[</span> -z <span class="k">$(</span>which curl<span class="k">)</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-    apt-get install curl
-  <span class="k">fi</span>
-  curl https://get.docker.com <span class="p">|</span> bash
+/usr/local/bin/pulledpork.pl -V
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="nb">read</span> -p <span class="s2">&quot;Something went wrong [CTRL+C to exit; ENTER to continue]: &quot;</span>
 <span class="k">fi</span>
 
-<span class="c1"># install docker-compose if not already installed</span>
-<span class="k">if</span> <span class="o">[[</span> -z <span class="k">$(</span>which docker-compose<span class="k">)</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-  install_docker_compose
-<span class="k">fi</span>
+sudo mkdir /usr/local/etc/rules
+sudo mkdir /usr/local/etc/so_rules/
+sudo mkdir /usr/local/etc/lists/
+sudo touch /usr/local/etc/rules/snort.rules
+sudo touch /usr/local/etc/rules/local.rules
+sudo touch /usr/local/etc/lists/default.blocklist
+sudo mkdir /var/log/snort
 </code></pre></div>
+<h4 id="configure">Configure<a class="headerlink" href="#configure" title="Permanent link">&para;</a></h4>
+<p>Modify <code>/usr/local/etc/pulledpork/pulledpork.conf</code>:</p>
+<ul>
+<li>Replace <code>oinkcode</code> with your oinkcode (Snort Account -&gt; Settings -&gt; Oinkcode)</li>
+<li>Put <code>#</code> before community rules</li>
+<li>Set <code>rule_path</code> to <code>/usr/local/etc/rules/snort.rules</code></li>
+<li>Set <code>local_rules</code> to <code>/usr/local/etc/rules/local.rules</code></li>
+<li>Set <code>sid_msg_version</code> to <code>2</code></li>
+<li>Set <code>sorule_path</code> to <code>/usr/local/etc/so_rules/</code></li>
+<li>Set <code>distro</code> to to your matching distro (explained in the config) e.g. <code>Debian-10</code></li>
+<li>Set <code>block_list</code> to <code>/usr/local/etc/lists/default.blocklist</code></li>
+<li>Set <code>IPRVersion</code> to <code>/usr/local/etc/lists</code></li>
+<li>Set <code>pid_path</code> to <code>/var/log/snort/snort.pid</code></li>
+<li>Set <code>ips_policy</code> to <code>security</code></li>
+</ul>
+<h4 id="run">Run<a class="headerlink" href="#run" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>sudo /usr/local/bin/pulledpork.pl -c /usr/local/etc/pulledpork/pulledpork.conf -l -P -E -H SIGHUP
+</code></pre></div>
+<h4 id="create-cronjob">Create Cronjob<a class="headerlink" href="#create-cronjob" title="Permanent link">&para;</a></h4>
+<p>Create a root cronjob (sudo crontab -e) to update the rulesets:
+<div class="highlight"><pre><span></span><code><span class="c1"># update snort ruleset at 2:30am</span>
+<span class="m">30</span> <span class="m">02</span> * * * /usr/local/bin/pulledpork.pl -c /usr/local/etc/pulledpork/pulledpork.conf -l -P -E -H SIGHUP
+</code></pre></div></p>
+<h3 id="snort-plugins">Snort Plugins<a class="headerlink" href="#snort-plugins" title="Permanent link">&para;</a></h3>
+<p>Adjust your <code>HOME_NET</code> in <code>/usr/local/etc/snort/snort.lua</code>:
+<div class="highlight"><pre><span></span><code><span class="c1">---------------------------------------------------------------------------</span>
+<span class="c1">-- 1. configure defaults</span>
+<span class="c1">---------------------------------------------------------------------------</span>
 
-</details>
+<span class="c1">-- HOME_NET and EXTERNAL_NET must be set now</span>
+<span class="c1">-- setup the network addresses you are protecting</span>
+<span class="n">HOME_NET</span> <span class="o">=</span> <span class="s1">&#39;any&#39;</span>
+
+<span class="c1">-- set up the external network addresses.</span>
+<span class="c1">-- (leave as &quot;any&quot; in most situations)</span>
+<span class="n">EXTERNAL_NET</span> <span class="o">=</span> <span class="s1">&#39;any&#39;</span>
+</code></pre></div></p>
                 
                   
                     
@@ -967,7 +1293,7 @@ Instead of typing <code>sudo docker-compose up -d</code> all the time you can us
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 7, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2021</span>
     
   </small>
 </div>
@@ -990,7 +1316,7 @@ Instead of typing <code>sudo docker-compose up -d</code> all the time you can us
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../dns/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../backup/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -999,19 +1325,19 @@ Instead of typing <code>sudo docker-compose up -d</code> all the time you can us
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Configure DNS
+                Backup
               </div>
             </div>
           </a>
         
         
-          <a href="../stack-logic/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../installation/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Stack Logic
+                Base
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -1038,26 +1364,26 @@ Instead of typing <code>sudo docker-compose up -d</code> all the time you can us
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.18f0862e.min.js"></script>
-      <script src="../../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
-          base: "../..",
+          base: "..",
           features: ['search.suggest', 'search.highlight', 'navigation.expand', 'navigation.instant', 'navigation.sections'],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.9c0e82ba.min.js"
+            worker: "../assets/javascripts/worker/search.9c0e82ba.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
       
-        <script src="../../js/config.js"></script>
+        <script src="../js/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.2/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../js/asciinema-player.js"></script>
+        <script src="../js/asciinema-player.js"></script>
       
     
   </body>

@@ -13,21 +13,21 @@
         <meta name="author" content="https://github.com/felbinger">
       
       
-        <link rel="canonical" href="https://felbinger.github.io/AdminGuide/installation/docker/">
+        <link rel="canonical" href="https://felbinger.github.io/AdminGuide/backup/">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
       
-        <title>Docker - Admin Guide</title>
+        <title>Backup - Admin Guide</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.cb6bc1d0.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.cb6bc1d0.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
         
           
           
@@ -46,7 +46,7 @@
     
     
     
-      <link rel="stylesheet" href="../../css/asciinema-player.css">
+      <link rel="stylesheet" href="../css/asciinema-player.css">
     
     
       
@@ -70,6 +70,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#docker-backup-manager-dbm" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -99,7 +104,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Docker
+              Backup
             
           </span>
         </div>
@@ -205,7 +210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         Overview
       </a>
     </li>
@@ -218,11 +223,52 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../backup/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Backup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Backup
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker-backup-manager-dbm" class="md-nav__link">
+    Docker Backup Manager (DBM)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#borg-backup" class="md-nav__link">
+    Borg Backup
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -235,7 +281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../snort/" class="md-nav__link">
+      <a href="../snort/" class="md-nav__link">
         Snort 3 (NIDS)
       </a>
     </li>
@@ -248,16 +294,14 @@
 
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" data-md-state="indeterminate" type="checkbox" id="nav-4" checked>
       
       <label class="md-nav__link" for="nav-4">
         Installation
@@ -276,7 +320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../installation/" class="md-nav__link">
         Base
       </a>
     </li>
@@ -288,7 +332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dns/" class="md-nav__link">
+      <a href="../installation/dns/" class="md-nav__link">
         Configure DNS
       </a>
     </li>
@@ -298,18 +342,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../installation/docker/" class="md-nav__link">
         Docker
       </a>
-      
     </li>
   
 
@@ -319,7 +356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../stack-logic/" class="md-nav__link">
+      <a href="../installation/stack-logic/" class="md-nav__link">
         Stack Logic
       </a>
     </li>
@@ -331,7 +368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../postinstall/" class="md-nav__link">
+      <a href="../installation/postinstall/" class="md-nav__link">
         Postinstall Script
       </a>
     </li>
@@ -398,7 +435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/traefik/" class="md-nav__link">
+      <a href="../services/traefik/" class="md-nav__link">
         Traefik
       </a>
     </li>
@@ -410,7 +447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/nginx-proxy/" class="md-nav__link">
+      <a href="../services/nginx-proxy/" class="md-nav__link">
         nginx/proxy
       </a>
     </li>
@@ -422,7 +459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/docky-onion/" class="md-nav__link">
+      <a href="../services/docky-onion/" class="md-nav__link">
         docky-onion
       </a>
     </li>
@@ -462,7 +499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/nginx/" class="md-nav__link">
+      <a href="../services/nginx/" class="md-nav__link">
         nginx
       </a>
     </li>
@@ -474,7 +511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/httpd/" class="md-nav__link">
+      <a href="../services/httpd/" class="md-nav__link">
         httpd
       </a>
     </li>
@@ -486,7 +523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/httpd-php/" class="md-nav__link">
+      <a href="../services/httpd-php/" class="md-nav__link">
         httpd with php
       </a>
     </li>
@@ -526,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/mariadb/" class="md-nav__link">
+      <a href="../services/mariadb/" class="md-nav__link">
         MariaDB
       </a>
     </li>
@@ -538,7 +575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/mongodb/" class="md-nav__link">
+      <a href="../services/mongodb/" class="md-nav__link">
         MongoDB
       </a>
     </li>
@@ -550,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/postgresql/" class="md-nav__link">
+      <a href="../services/postgresql/" class="md-nav__link">
         PostgreSQL
       </a>
     </li>
@@ -562,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/redis/" class="md-nav__link">
+      <a href="../services/redis/" class="md-nav__link">
         Redis
       </a>
     </li>
@@ -574,7 +611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/openldap/" class="md-nav__link">
+      <a href="../services/openldap/" class="md-nav__link">
         OpenLDAP
       </a>
     </li>
@@ -614,7 +651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/minecraft/" class="md-nav__link">
+      <a href="../services/minecraft/" class="md-nav__link">
         Minecraft
       </a>
     </li>
@@ -626,7 +663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/arma3/" class="md-nav__link">
+      <a href="../services/arma3/" class="md-nav__link">
         Arma 3 Server
       </a>
     </li>
@@ -666,7 +703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/teamspeak/" class="md-nav__link">
+      <a href="../services/teamspeak/" class="md-nav__link">
         Teamspeak 3 + Sinusbot
       </a>
     </li>
@@ -678,7 +715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/matrix/" class="md-nav__link">
+      <a href="../services/matrix/" class="md-nav__link">
         Matrix
       </a>
     </li>
@@ -690,7 +727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/element/" class="md-nav__link">
+      <a href="../services/element/" class="md-nav__link">
         Element
       </a>
     </li>
@@ -702,7 +739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/jitsi/" class="md-nav__link">
+      <a href="../services/jitsi/" class="md-nav__link">
         Jitsi
       </a>
     </li>
@@ -742,7 +779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/syncthing/" class="md-nav__link">
+      <a href="../services/syncthing/" class="md-nav__link">
         Syncthing
       </a>
     </li>
@@ -754,7 +791,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/sharelatex/" class="md-nav__link">
+      <a href="../services/sharelatex/" class="md-nav__link">
         ShareLaTeX
       </a>
     </li>
@@ -766,7 +803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/hackmd/" class="md-nav__link">
+      <a href="../services/hackmd/" class="md-nav__link">
         HackMD
       </a>
     </li>
@@ -778,7 +815,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/calibre/" class="md-nav__link">
+      <a href="../services/calibre/" class="md-nav__link">
         Calibre
       </a>
     </li>
@@ -790,7 +827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/gitea/" class="md-nav__link">
+      <a href="../services/gitea/" class="md-nav__link">
         Gitea
       </a>
     </li>
@@ -830,7 +867,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/grafana/" class="md-nav__link">
+      <a href="../services/grafana/" class="md-nav__link">
         Grafana
       </a>
     </li>
@@ -842,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/influxdb/" class="md-nav__link">
+      <a href="../services/influxdb/" class="md-nav__link">
         InfluxDB + Telegraf
       </a>
     </li>
@@ -854,7 +891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/prometheus/" class="md-nav__link">
+      <a href="../services/prometheus/" class="md-nav__link">
         Prometheus
       </a>
     </li>
@@ -866,7 +903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../services/loki/" class="md-nav__link">
+      <a href="../services/loki/" class="md-nav__link">
         Loki (collect logs)
       </a>
     </li>
@@ -892,73 +929,160 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker-backup-manager-dbm" class="md-nav__link">
+    Docker Backup Manager (DBM)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#borg-backup" class="md-nav__link">
+    Borg Backup
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/felbinger/AdminGuide/edit/master/docs/installation/docker.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/felbinger/AdminGuide/edit/master/docs/backup.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Docker</h1>
+                  <h1>Backup</h1>
                 
-                <div class="admonition note">
-<p class="admonition-title">Old Docker Versions</p>
-<blockquote>
-<p><a href="https://stackoverflow.com/a/45023650">Older versions of the Docker binary were called docker or docker-engine or docker-io</a></p>
-</blockquote>
-<p>If you already installed this version you can uninstall it via:
-<div class="highlight"><pre><span></span><code>sudo apt-get remove docker docker-engine docker.io containerd runc
-</code></pre></div></p>
+                <p>I suspended all file backup projects (<a href="https://github.com/felbinger/GBM">GBM</a>, <a href="https://github.com/felbinger/PyBackup">PyBackup</a>). 
+I suggest you use <a href="https://borgbackup.readthedocs.io/en/stable/">borg backup</a> for file backups. You can use my <a href="https://github.com/felbinger/dbm">DBM</a> to get the database backups from your docker container.</p>
+<h3 id="docker-backup-manager-dbm">Docker Backup Manager (DBM)<a class="headerlink" href="#docker-backup-manager-dbm" title="Permanent link">&para;</a></h3>
+<p>The <a href="https://github.com/felbinger/dbm">docker backup management</a> is a docker image to back up the database and ldap server inside your docker container. 
+It's basicly a bash script which uses the docker network to access the database servers.  </p>
+<p>You can simply create a script which runs the container with the required environment variables to create the backup.  </p>
+<div class="admonition warning">
+<p class="admonition-title">Security Warning</p>
+<p>Note that all scripts executed by a root cronjob, should only be editable by root. Otherwise a lower privileged user, might be able to gain higher privileges (<a href="https://en.wikipedia.org/wiki/Privilege_escalation">Privilege Escalation</a>).  </p>
 </div>
-<p>Docker itself already provides a very good script:</p>
-<div class="highlight"><pre><span></span><code>curl -fsSL https://get.docker.com <span class="p">|</span> sudo bash
-</code></pre></div>
-<p>Finally, you need to install Docker Compose:</p>
-<p><div class="highlight"><pre><span></span><code>sudo curl -L -o /usr/local/bin/docker-compose <span class="se">\</span>
-  <span class="s2">&quot;https://github.com/docker/compose/releases/latest/download/docker-compose-</span><span class="k">$(</span>uname -s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname -m<span class="k">)</span><span class="s2">&quot;</span>
-sudo chmod +x /usr/local/bin/docker-compose
-</code></pre></div>
-On an ARM Maschine you need:
-<div class="highlight"><pre><span></span><code>pip install docker-compose
-</code></pre></div>
-Instead of typing <code>sudo docker-compose up -d</code> all the time you can use this alias and type <code>dc up -d</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s1">&#39;alias dc=&quot;sudo docker-compose &quot;&#39;</span> &gt;&gt; ~/.bashrc
-</code></pre></div>
-<details>
-  <summary>Parts of the PostInstall script covered in this chapter</summary>
-
+<p>You're script may look like this, you may remove the environmentment variables you don't need.  </p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
-<span class="k">function</span> install_docker_compose<span class="o">()</span> <span class="o">{</span>
-  curl -L <span class="s2">&quot;https://github.com/docker/compose/releases/download/latest/docker-compose-</span><span class="k">$(</span>uname -s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname -m<span class="k">)</span><span class="s2">&quot;</span> -o /usr/local/bin/docker-compose
-  chmod +x /usr/local/bin/docker-compose
-<span class="o">}</span>
-
-<span class="k">function</span> docker_network_create<span class="o">()</span> <span class="o">{</span>
-  <span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">1</span><span class="si">}</span>
-  <span class="nv">subnet</span><span class="o">=</span><span class="si">${</span><span class="nv">2</span><span class="si">}</span>
-  docker network inspect <span class="si">${</span><span class="nv">name</span><span class="si">}</span> &gt;/dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="o">||</span> <span class="se">\</span>
-  docker network create --subnet <span class="si">${</span><span class="nv">subnet</span><span class="si">}</span> <span class="si">${</span><span class="nv">name</span><span class="si">}</span>
-<span class="o">}</span>
-
-<span class="c1"># install docker if not already installed</span>
-<span class="k">if</span> <span class="o">[[</span> -z <span class="k">$(</span>which docker<span class="k">)</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="k">if</span> <span class="o">[[</span> -z <span class="k">$(</span>which curl<span class="k">)</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-    apt-get install curl
-  <span class="k">fi</span>
-  curl https://get.docker.com <span class="p">|</span> bash
-<span class="k">fi</span>
-
-<span class="c1"># install docker-compose if not already installed</span>
-<span class="k">if</span> <span class="o">[[</span> -z <span class="k">$(</span>which docker-compose<span class="k">)</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-  install_docker_compose
-<span class="k">fi</span>
+docker run --rm -it <span class="se">\</span>
+  -v <span class="s1">&#39;/var/backups/:/data/&#39;</span> <span class="se">\</span>
+  -e <span class="s2">&quot;LDAP_HOST=main_ldap_1&quot;</span> <span class="se">\</span>
+  -e <span class="s2">&quot;LDAP_BASE_DN=dc=domain,dc=de&quot;</span> <span class="se">\</span>
+  -e <span class="s2">&quot;LDAP_BIND_DN=cn=admin,dc=domain,dc=de&quot;</span> <span class="se">\</span>
+  -e <span class="s2">&quot;LDAP_BIND_PW=S3cr3T&quot;</span> <span class="se">\</span>
+  -e <span class="s2">&quot;MARIADB_HOST=main_mariadb_1&quot;</span> <span class="se">\</span>
+  -e <span class="s2">&quot;MARIADB_DATABASES=mysql mariadb_backup nonexistent&quot;</span> <span class="se">\</span>
+  -e <span class="s2">&quot;MARIADB_PASSWORD=S3cr3T&quot;</span> <span class="se">\</span>
+  -e <span class="s2">&quot;MARIADB_USERNAME=root&quot;</span> <span class="se">\</span>
+  -e <span class="s2">&quot;POSTGRES_HOST=main_postgres_1&quot;</span> <span class="se">\</span>
+  -e <span class="s2">&quot;POSTGRES_USERNAME=postgres&quot;</span> <span class="se">\</span>
+  -e <span class="s2">&quot;POSTGRES_PASSWORD=S3cr3T&quot;</span> <span class="se">\</span>
+  -e <span class="s2">&quot;POSTGRES_DATABASES=postgres_backup postgres nonexistent&quot;</span> <span class="se">\</span>
+  -e <span class="s2">&quot;MONGODB_HOST=main_mongo_1&quot;</span> <span class="se">\</span>
+  -e <span class="s2">&quot;MONGODB_PASSWORD=S3cr3T&quot;</span> <span class="se">\</span>
+  -e <span class="s2">&quot;MONGODB_DATABASES=admin nonexistent&quot;</span> <span class="se">\</span>
+  --network<span class="o">=</span>database <span class="se">\</span>
+  ghcr.io/felbinger/dbm
 </code></pre></div>
+<p>I really suggest creating a separate database user which can only create backups.<br />
+Checkout the documentation for your dbms:</p>
+<div class="admonition warning">
+<p>If you created these users for the old backup (eighter pybackup or gbm), you probally limited these users to the localhost. 
+The DBM creates the backup over the network, so it can't use a user which is limited to localhost. Make sure to adjust the privileges.</p>
+</div>
+<ul>
+<li><a href="https://mariadb.com/kb/en/create-user/">MariaDB</a>
+  <div class="highlight"><pre><span></span><code><span class="c1"># example for mariadb (you need SELECT and LOCK TABLES permissions)</span>
+$ sudo docker-compose <span class="nb">exec</span> mariadb mysql -u root -pS3cr3T
+mariadb&gt; CREATE USER <span class="s1">&#39;backup&#39;</span>@<span class="s1">&#39;%&#39;</span> IDENTIFIED BY <span class="s1">&#39;secret_password_for_backup_user&#39;</span><span class="p">;</span>
+mariadb&gt; GRANT SELECT, LOCK TABLES ON mysql.* TO <span class="s1">&#39;backup&#39;</span>@<span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
+<span class="c1"># add privileges to all databases that you want to backup!</span>
+mariadb&gt; FLUSH PRIVILEGES<span class="p">;</span>
+mariadb&gt; EXIT<span class="p">;</span>
+</code></pre></div></li>
+<li><a href="https://www.postgresql.org/docs/8.0/sql-createuser.html">PostgreSQL</a></li>
+<li><a href="https://docs.mongodb.com/manual/reference/method/db.createUser/">MongoDB</a></li>
+</ul>
+<p>Backups should also be scheduled using cronjob:
+<div class="highlight"><pre><span></span><code># database backups using docker backup management every three hours
+0 */3 * * * /bin/bash /root/db_backup.sh &gt;/dev/null 2&gt;&amp;1
+</code></pre></div></p>
+<h3 id="borg-backup">Borg Backup<a class="headerlink" href="#borg-backup" title="Permanent link">&para;</a></h3>
+<p>Like I mentioned above, I'm currently using borg for file backups. Checkout the <a href="https://borgbackup.readthedocs.io/en/stable/#easy-to-use">official documentation</a></p>
+<p>Create a backup repository:
+<div class="highlight"><pre><span></span><code>borg init -e repokey /home/borg
+</code></pre></div></p>
+<p>Don't forget to export the repokey and save it somewhere safe!
+<div class="highlight"><pre><span></span><code>borg key <span class="nb">export</span> /home/borg /home/user/borg.repokey
+</code></pre></div></p>
+<p>I created a script to perform the backups:
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
-</details>
+<span class="nb">export</span> <span class="nv">BORG_PASSPHRASE</span><span class="o">=</span><span class="s2">&quot;&lt;your_borg_repository_passphrase&gt;&quot;</span>
+
+<span class="c1"># date in format: YYYY-MM-DD_HH-MM round to 15 minutes blocks</span>
+<span class="nv">DATE</span><span class="o">=</span><span class="k">$(</span>date +<span class="s2">&quot;%Y-%m-%d_%H&quot;</span><span class="k">)</span>-<span class="k">$(</span><span class="nb">echo</span> <span class="s2">&quot;</span><span class="k">$(</span>date +%M<span class="k">)</span><span class="s2"> - (</span><span class="k">$(</span>date +%M<span class="k">)</span><span class="s2">%15)&quot;</span> <span class="p">|</span> bc<span class="k">)</span>
+
+<span class="nv">PATHS</span><span class="o">=(</span>
+  <span class="s2">&quot;/srv/&quot;</span>
+  <span class="s2">&quot;/home/admin/&quot;</span>
+  <span class="s2">&quot;/root/&quot;</span>
+  <span class="s2">&quot;/etc/ssh/sshd_config&quot;</span>
+  <span class="s2">&quot;/etc/telegraf/telegraf.conf&quot;</span>
+<span class="o">)</span>
+
+borg create --stats --progress -C lzma,5 /home/borg::<span class="si">${</span><span class="nv">DATE</span><span class="si">}</span> <span class="si">${</span><span class="nv">PATHS</span><span class="p">[@]</span><span class="si">}</span>
+</code></pre></div></p>
+<p>The script is being executed by a crontab every night:
+<div class="highlight"><pre><span></span><code># run borg backup at 4 am
+0 4 * * * /bin/bash /root/backup.sh &gt;/dev/null 2&gt;&amp;1
+</code></pre></div></p>
+<p>I also created a script to pack the whole borg repository into a tar file:
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="nb">export</span> <span class="nv">BORG_PASSPHRASE</span><span class="o">=</span><span class="s2">&quot;&lt;your_borg_repository_passphrase&gt;&quot;</span>
+<span class="nv">latest</span><span class="o">=</span><span class="k">$(</span>borg list /home/borg <span class="p">|</span> tail -1 <span class="p">|</span> cut -d <span class="s2">&quot; &quot;</span> -f <span class="m">1</span><span class="k">)</span>
+
+<span class="c1"># extract last full backup from repository</span>
+<span class="c1">#borg export-tar --progress &quot;/home/borg::${latest}&quot; &quot;/home/user/${latest}.tar&quot;</span>
+
+<span class="c1"># validate that bork is not in use</span>
+<span class="k">while</span> <span class="o">[[</span> -n <span class="k">$(</span>pidof -x <span class="k">$(</span>which borg<span class="k">))</span> <span class="o">]]</span><span class="p">;</span> <span class="k">do</span>
+  sleep <span class="m">60</span>
+<span class="k">done</span>
+
+<span class="c1"># pack backup repository</span>
+tar -cvf /home/user/backup_repository.tar /home/borg
+
+chown user:user /home/user/backup_repository.tar
+chmod <span class="m">664</span> /home/user/backup_repository.tar
+</code></pre></div></p>
                 
                   
                     
@@ -967,7 +1091,7 @@ Instead of typing <code>sudo docker-compose up -d</code> all the time you can us
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 7, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2021</span>
     
   </small>
 </div>
@@ -990,7 +1114,7 @@ Instead of typing <code>sudo docker-compose up -d</code> all the time you can us
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../dns/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href=".." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -999,19 +1123,19 @@ Instead of typing <code>sudo docker-compose up -d</code> all the time you can us
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Configure DNS
+                Overview
               </div>
             </div>
           </a>
         
         
-          <a href="../stack-logic/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../snort/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Stack Logic
+                Snort 3 (NIDS)
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -1038,26 +1162,26 @@ Instead of typing <code>sudo docker-compose up -d</code> all the time you can us
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.18f0862e.min.js"></script>
-      <script src="../../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
-          base: "../..",
+          base: "..",
           features: ['search.suggest', 'search.highlight', 'navigation.expand', 'navigation.instant', 'navigation.sections'],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.9c0e82ba.min.js"
+            worker: "../assets/javascripts/worker/search.9c0e82ba.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
       
-        <script src="../../js/config.js"></script>
+        <script src="../js/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.1.2/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../js/asciinema-player.js"></script>
+        <script src="../js/asciinema-player.js"></script>
       
     
   </body>
