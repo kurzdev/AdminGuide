@@ -1195,6 +1195,14 @@ htpasswd -c /srv/main/traefik/webfiles.htpasswd -c &lt;username&gt;
 <p>You can enable the prometheus metrics for monitoring (checkout <a href="../prometheus/">prometheus</a>) by adding the following to your command:
 <div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="s">&quot;--metrics.prometheus=true&quot;</span>
 </code></pre></div></p>
+<p>Don't forget to add your traefik container to the prometheus configuration:
+<div class="highlight"><pre><span></span><code><span class="nn">...</span>
+<span class="nt">scrape_configs</span><span class="p">:</span>
+   <span class="l l-Scalar l-Scalar-Plain">...</span>
+  <span class="l l-Scalar l-Scalar-Plain">- job_name</span><span class="p p-Indicator">:</span> <span class="s">&#39;traefik&#39;</span>
+    <span class="nt">static_configs</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">targets</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&#39;traefik:8080&#39;</span><span class="p p-Indicator">]</span>
+</code></pre></div></p>
                 
                   
                     

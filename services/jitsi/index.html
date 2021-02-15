@@ -753,6 +753,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#export-metrics" class="md-nav__link">
+    Export Metrics
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1014,6 +1021,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#export-metrics" class="md-nav__link">
+    Export Metrics
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1180,6 +1194,23 @@ I suggest you copy the jibri service to your <code>docker-compose.yml</code>.</p
 <div class="highlight"><pre><span></span><code><span class="nv">ip</span><span class="o">=</span><span class="k">$(</span>docker inspect jitsi_jvb_1 <span class="p">|</span> jq <span class="s2">&quot;.[0].NetworkSettings.Networks.jitsi.IPAddress&quot;</span> <span class="p">|</span> tr -d <span class="s1">&#39;&quot;&#39;</span><span class="k">)</span>
 curl -s <span class="s2">&quot;http://</span><span class="si">${</span><span class="nv">ip</span><span class="si">}</span><span class="s2">:8080/colibri/stats&quot;</span> <span class="p">|</span> jq
 </code></pre></div></p>
+<h2 id="export-metrics">Export Metrics<a class="headerlink" href="#export-metrics" title="Permanent link">&para;</a></h2>
+<p>You can export the metrics by using a prometheus exporter:
+<div class="highlight"><pre><span></span><code>    <span class="nt">jitsi2prometheus</span><span class="p">:</span>
+        <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ghcr.io/an2ic3/jitsi2prometheus</span>
+        <span class="nt">restart</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">always</span>
+        <span class="nt">networks</span><span class="p">:</span>
+            <span class="nt">meet.jitsi</span><span class="p">:</span>
+            <span class="l l-Scalar l-Scalar-Plain">monitoring</span>
+</code></pre></div></p>
+<p>Don't forget to add your jitsi2prometheus instance to the prometheus configuration:
+<div class="highlight"><pre><span></span><code><span class="nn">...</span>
+<span class="nt">scrape_configs</span><span class="p">:</span>
+   <span class="l l-Scalar l-Scalar-Plain">...</span>
+  <span class="l l-Scalar l-Scalar-Plain">- job_name</span><span class="p p-Indicator">:</span> <span class="s">&#39;jitsi&#39;</span>
+    <span class="nt">static_configs</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">targets</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&#39;jitsi2prometheus:8080&#39;</span><span class="p p-Indicator">]</span>
+</code></pre></div></p>
                 
                   
                     
@@ -1188,7 +1219,7 @@ curl -s <span class="s2">&quot;http://</span><span class="si">${</span><span cla
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2021</span>
     
   </small>
 </div>
