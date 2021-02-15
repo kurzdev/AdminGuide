@@ -840,6 +840,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ldap-auth" class="md-nav__link">
+    LDAP Auth
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -932,6 +939,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ldap-auth" class="md-nav__link">
+    LDAP Auth
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -997,6 +1011,50 @@ The default login for grafana is <code>admin</code>:<code>admin</code>.</p>
 <p>You may specify a list of plugins which you would like to install in the <code>.grafana.env</code>:
 <div class="highlight"><pre><span></span><code>GF_INSTALL_PLUGINS=grafana-piechart-panel
 </code></pre></div></p>
+<h3 id="ldap-auth">LDAP Auth<a class="headerlink" href="#ldap-auth" title="Permanent link">&para;</a></h3>
+<p>You can configure ldap auth in <code>/srv/main/grafana/etc/grafana.ini</code> and <code>/srv/main/grafana/etc/ldap.toml</code>:
+<div class="highlight"><pre><span></span><code><span class="c1">#################################### Auth LDAP ##########################</span>
+<span class="k">[auth.ldap]</span>
+<span class="na">enabled</span> <span class="o">=</span> <span class="s">true</span>
+<span class="c1">;config_file = /etc/grafana/ldap.toml</span>
+<span class="c1">;allow_sign_up = true</span>
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span class="k">[log]</span>
+<span class="n">filters</span> <span class="o">=</span> <span class="s">&quot;ldap:debug&quot;</span>
+
+<span class="k">[[servers]]</span>
+<span class="n">host</span> <span class="o">=</span> <span class="s">&quot;ldap&quot;</span>
+<span class="n">port</span> <span class="o">=</span> <span class="mi">389</span>
+<span class="n">use_ssl</span> <span class="o">=</span> <span class="kc">false</span>
+<span class="n">start_tls</span> <span class="o">=</span> <span class="kc">false</span>
+<span class="n">ssl_skip_verify</span> <span class="o">=</span> <span class="kc">false</span>
+
+<span class="n">bind_dn</span> <span class="o">=</span> <span class="s">&quot;cn=admin,dc=domain,dc=de&quot;</span>
+<span class="n">bind_password</span> <span class="o">=</span> <span class="s">&#39;S3cr3T&#39;</span>
+
+<span class="n">search_filter</span> <span class="o">=</span> <span class="s">&quot;(&amp;(objectclass=person)(&amp;(memberof=cn=grafana,ou=groups,dc=domain,dc=de))(uid=%s))&quot;</span>
+<span class="n">search_base_dns</span> <span class="o">=</span> <span class="k">[&quot;dc=domain,dc=de&quot;]</span>
+
+<span class="k">[servers.attributes]</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s">&quot;givenName&quot;</span>
+<span class="n">surname</span> <span class="o">=</span> <span class="s">&quot;sn&quot;</span>
+<span class="n">username</span> <span class="o">=</span> <span class="s">&quot;cn&quot;</span>
+<span class="n">member_of</span> <span class="o">=</span> <span class="s">&quot;memberOf&quot;</span>
+<span class="n">email</span> <span class="o">=</span>  <span class="s">&quot;email&quot;</span>
+
+<span class="k">[[servers.group_mappings]]</span>
+<span class="n">group_dn</span> <span class="o">=</span> <span class="s">&quot;cn=admin,cn=grafana,ou=groups,dc=domain,dc=de&quot;</span>
+<span class="n">org_role</span> <span class="o">=</span> <span class="s">&quot;Admin&quot;</span>
+
+<span class="k">[[servers.group_mappings]]</span>
+<span class="n">group_dn</span> <span class="o">=</span> <span class="s">&quot;cn=editor,cn=grafana,ou=groups,dc=domain,dc=de&quot;</span>
+<span class="n">org_role</span> <span class="o">=</span> <span class="s">&quot;Editor&quot;</span>
+
+<span class="k">[[servers.group_mappings]]</span>
+<span class="n">group_dn</span> <span class="o">=</span> <span class="s">&quot;*&quot;</span>
+<span class="n">org_role</span> <span class="o">=</span> <span class="s">&quot;Viewer&quot;</span>
+</code></pre></div>
+<p>All members of <code>cn=grafana,ou=groups,dc=domain,dc=de</code> get the Viewer role, members that are also in <code>cn=editor,cn=grafana,ou=groups,dc=domain,dc=de</code> get the Editor role...</p>
                 
                   
                     

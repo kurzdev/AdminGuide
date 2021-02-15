@@ -432,6 +432,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#enable-metrics-for-monitoring" class="md-nav__link">
+    Enable Metrics for Monitoring
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -978,6 +985,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#enable-metrics-for-monitoring" class="md-nav__link">
+    Enable Metrics for Monitoring
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1177,6 +1191,10 @@ htpasswd -c /srv/main/traefik/webfiles.htpasswd -c &lt;username&gt;
       <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.middlewares.mw_redirect.redirectregex.permanent=true&quot;</span>
       <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_redirect.middlewares=mw_redirect@docker,error40x@docker,error30x@docker&quot;</span>
 </code></pre></div></p>
+<h3 id="enable-metrics-for-monitoring">Enable Metrics for Monitoring<a class="headerlink" href="#enable-metrics-for-monitoring" title="Permanent link">&para;</a></h3>
+<p>You can enable the prometheus metrics for monitoring (checkout <a href="../prometheus/">prometheus</a>) by adding the following to your command:
+<div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="s">&quot;--metrics.prometheus=true&quot;</span>
+</code></pre></div></p>
                 
                   
                     
@@ -1185,7 +1203,7 @@ htpasswd -c /srv/main/traefik/webfiles.htpasswd -c &lt;username&gt;
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2021</span>
     
   </small>
 </div>
