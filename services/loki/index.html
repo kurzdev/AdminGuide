@@ -13,14 +13,14 @@
         <meta name="author" content="https://github.com/felbinger">
       
       
-        <link rel="canonical" href="https://felbinger.github.io/AdminGuide/services/monitoring/">
+        <link rel="canonical" href="https://felbinger.github.io/AdminGuide/services/loki/">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
       
-        <title>Monitoring - Admin Guide</title>
+        <title>Loki (collect logs) - Admin Guide</title>
       
     
     
@@ -71,11 +71,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#resource-monitoring" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -104,7 +99,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Monitoring
+              Loki (collect logs)
             
           </span>
         </div>
@@ -777,69 +772,81 @@
     
   
   
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-7" type="checkbox" id="nav-3-7" checked>
+      
+      <label class="md-nav__link" for="nav-3-7">
+        Monitoring
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Monitoring" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-7">
+          <span class="md-nav__icon md-icon"></span>
+          Monitoring
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grafana/" class="md-nav__link">
+        Grafana
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../influxdb/" class="md-nav__link">
+        InfluxDB + Telegraf
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prometheus/" class="md-nav__link">
+        Prometheus
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Monitoring
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Monitoring
+        Loki (collect logs)
       </a>
       
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+    </li>
   
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#resource-monitoring" class="md-nav__link">
-    Resource Monitoring
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#telegraf-collecting-agent" class="md-nav__link">
-    Telegraf Collecting Agent
-  </a>
-  
-    <nav class="md-nav" aria-label="Telegraf Collecting Agent">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#monitoring-docker-instances-from-the-host" class="md-nav__link">
-    Monitoring docker instances from the host
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#more-resources" class="md-nav__link">
-    More Resources
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -857,190 +864,48 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#resource-monitoring" class="md-nav__link">
-    Resource Monitoring
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#telegraf-collecting-agent" class="md-nav__link">
-    Telegraf Collecting Agent
-  </a>
-  
-    <nav class="md-nav" aria-label="Telegraf Collecting Agent">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#monitoring-docker-instances-from-the-host" class="md-nav__link">
-    Monitoring docker instances from the host
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#more-resources" class="md-nav__link">
-    More Resources
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/felbinger/AdminGuide/edit/master/docs/services/monitoring.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/felbinger/AdminGuide/edit/master/docs/services/loki.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Monitoring</h1>
+                  <h1>Loki (collect logs)</h1>
                 
-                <h2 id="resource-monitoring">Resource Monitoring<a class="headerlink" href="#resource-monitoring" title="Permanent link">&para;</a></h2>
-<p>I'm using <a href="https://www.influxdata.com/time-series-platform/telegraf/">Telegraf</a>, <a href="https://www.influxdata.com/products/influxdb-overview/">InfluxDB</a> and <a href="https://grafana.com/">Grafana</a> as frontend to monitor my server resources.</p>
-<p><img alt="Grafana Dashboard" src="../../img/services/grafana_dashboard.png?raw=true" />
-<div class="highlight"><pre><span></span><code>  <span class="c1"># shell: docker-compose exec influxdb influx -precision rfc3339</span>
-  <span class="nt">influxdb</span><span class="p">:</span>
-    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">influxdb</span>
+                <p>You can use loki with a docker plugin to send the logs of your docker container to grafana:</p>
+<p>Simply add the loki service definition to the <code>docker-compose.yml</code>, in which the monitoring services are defined.
+<div class="highlight"><pre><span></span><code>  <span class="nt">loki</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">grafana/loki</span>
     <span class="nt">restart</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">always</span>
-    <span class="c1">#volumes:</span>
-    <span class="c1">#  - /srv/main/influxdb/lib:/var/lib/influxdb</span>
-    <span class="c1">#  - /srv/main/influxdb/influxdb.conf:/etc/influxdb/influxdb.conf</span>
-    <span class="nt">environment</span><span class="p">:</span>
-      <span class="nt">INFLUXDB_GRAPHITE_ENABLED</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
     <span class="nt">networks</span><span class="p">:</span>
       <span class="nt">monitoring</span><span class="p">:</span>
-        <span class="nt">ipv4_address</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">192.168.2.254</span>
-
-  <span class="nt">grafana</span><span class="p">:</span>
-    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">grafana/grafana</span>
-    <span class="nt">restart</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">always</span>
-    <span class="nt">depends_on</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">influxdb</span>
-    <span class="c1">#volumes:</span>
-    <span class="c1">#  - /srv/main/grafana/lib:/var/lib/grafana</span>
-    <span class="c1">#  - /srv/main/grafana/etc:/etc/grafana</span>
-    <span class="c1">#  - /srv/main/grafana/log:/var/log/grafana</span>
-    <span class="nt">environment</span><span class="p">:</span>
-      <span class="nt">VIRTUAL_HOST</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">monitoring.domain.tld:3000</span>
-      <span class="nt">LETSENCRYPT_HOST</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">monitoring.domain.tld</span>
-    <span class="nt">networks</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">monitoring</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">proxy</span>
+        <span class="nt">ipv4_address</span><span class="p">:</span> <span class="s">&quot;192.168.2.253&quot;</span>
 </code></pre></div></p>
-<p>Unfortunately you need to copy the three volumes out of grafana before starting it up:
-<div class="highlight"><pre><span></span><code>mkdir -p /srv/main/<span class="o">{</span>grafana,influxdb<span class="o">}</span>
-<span class="c1"># copy data directory</span>
-sudo docker cp main_grafana_1:/var/lib/grafana <span class="se">\</span>
-  /srv/main/grafana/lib
-<span class="c1"># copy config directory</span>
-sudo docker cp main_grafana_1:/etc/grafana <span class="se">\</span>
-  /srv/main/grafana/etc
-<span class="c1"># copy log directory</span>
-sudo docker cp main_grafana_1:/var/log/grafana <span class="se">\</span>
-  /srv/main/grafana/log
-<span class="c1"># adjust permissions</span>
-sudo chown -R <span class="m">472</span>:472 /srv/main/grafana/
-
-<span class="c1"># influxdb</span>
-sudo docker cp main_influxdb_1:/var/lib/influxdb <span class="se">\</span>
-  /srv/main/influxdb/lib
-sudo docker cp main_influxdb_1:/etc/influxdb/influxdb.conf <span class="se">\</span>
-  /srv/main/influxdb/influxdb.conf
+<p>Next may install the loki docker plugin:
+<div class="highlight"><pre><span></span><code>docker plugin install grafana/loki-docker-driver:latest --alias loki --grant-all-permissions
 </code></pre></div></p>
-<p>Afterwards you can remove the comments in front of the volumes and start up the container. The default login for grafana is <code>admin</code>:<code>admin</code>.</p>
-<h2 id="telegraf-collecting-agent">Telegraf Collecting Agent<a class="headerlink" href="#telegraf-collecting-agent" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ sudo apt install apt-transport-https wget gnupg
-$ wget -qO- https://repos.influxdata.com/influxdb.key <span class="p">|</span> sudo apt-key add -
-$ <span class="nb">echo</span> <span class="s2">&quot;deb https://repos.influxdata.com/debian buster stable&quot;</span> <span class="p">|</span> sudo tee -a /etc/apt/sources.list.d/influxdb.list
-$ sudo apt update
-$ sudo apt install telegraf
-</code></pre></div>
-<p><strong>Command are below...</strong>
-In terms of configuration you first have to disable the influxdb output in the <code>telegraf.conf</code>. We are not going to use it, because it might be overwritten on telegraf updates. Just search for <code>[[outputs.influxdb]]</code> and put a <code>#</code> in front of it to mark it as a comment. The telegraf daemon will try to send data to the default url which is <code>localhost:8086</code>. In our case, with influxdb inside the docker helper network, <code>monitoring</code> we will reach the influxdb on the ip address <code>192.168.2.254</code> via a network bridge (check <code>ip route</code> for more information).</p>
-<div class="highlight"><pre><span></span><code>...
-<span class="c1">###############################################################################</span>
-<span class="c1">#                            OUTPUT PLUGINS                                   #</span>
-<span class="c1">###############################################################################</span>
-
-
-<span class="c1"># Configuration for sending metrics to InfluxDB</span>
-<span class="c1">#[[outputs.influxdb]]                                                         # &lt;-- there</span>
-  <span class="c1">## The full HTTP or UDP URL for your InfluxDB instance.</span>
-  <span class="c1">##</span>
-  <span class="c1">## Multiple URLs can be specified for a single cluster, only ONE of the</span>
-  <span class="c1">## urls will be written to each interval.</span>
-  <span class="c1"># urls = [&quot;unix:///var/run/influxdb.sock&quot;]</span>
-  <span class="c1"># urls = [&quot;udp://127.0.0.1:8089&quot;]</span>
-  <span class="c1"># urls = [&quot;http://127.0.0.1:8086&quot;]</span>
-...
-</code></pre></div>
-<p>Afterwards we are going to edit the copied telegraf configuration (<code>/etc/telegraf/telegraf.d/hostname.conf</code>). Just add the correct <code>urls</code> entry in the influxdb output area to get basic reporting which is enabled by default.</p>
-<div class="highlight"><pre><span></span><code>...
-<span class="c1">###############################################################################</span>
-<span class="c1">#                            OUTPUT PLUGINS                                   #</span>
-<span class="c1">###############################################################################</span>
-
-
-<span class="c1"># Configuration for sending metrics to InfluxDB</span>
-<span class="o">[[</span>outputs.influxdb<span class="o">]]</span>
-  <span class="c1">## The full HTTP or UDP URL for your InfluxDB instance.</span>
-  <span class="c1">##</span>
-  <span class="c1">## Multiple URLs can be specified for a single cluster, only ONE of the</span>
-  <span class="c1">## urls will be written to each interval.</span>
-  <span class="c1"># urls = [&quot;unix:///var/run/influxdb.sock&quot;]</span>
-  <span class="c1"># urls = [&quot;udp://127.0.0.1:8089&quot;]</span>
-  <span class="c1"># urls = [&quot;http://127.0.0.1:8086&quot;]</span>
-  <span class="nv">urls</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;http://192.168.2.254:8086&quot;</span><span class="o">]</span>                                             <span class="c1"># &lt;-- there</span>
-...
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># configure telegraf (hostname.conf should match your hostname)</span>
-sudo cp /etc/telegraf/telegraf.<span class="o">{</span>conf,d/hostname.conf<span class="o">}</span>
-sudo nano /etc/telegraf/telegraf.<span class="o">{</span>conf,d/hostname.conf<span class="o">}</span>
-sudo systemctl restart telegraf
-</code></pre></div>
-<h3 id="monitoring-docker-instances-from-the-host">Monitoring docker instances from the host<a class="headerlink" href="#monitoring-docker-instances-from-the-host" title="Permanent link">&para;</a></h3>
-<p>You can monitor your docker instances using the on the host running telegraf instance if you assign these docker containers a static ip address, like in influxdb:
-<div class="highlight"><pre><span></span><code><span class="nn">...</span>
-<span class="nt">networks</span><span class="p">:</span>
-  <span class="nt">database</span><span class="p">:</span>
-    <span class="nt">ip_address</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">192.168.1.254</span>
-<span class="nn">...</span>
-</code></pre></div>
-Afterwards you can go to the input section in your telegraf configuration (<code>/etc/telegraf/telegraf.d/{hostname}.conf</code>) and add the new "input's".</p>
-<h3 id="more-resources">More Resources<a class="headerlink" href="#more-resources" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="https://docs.influxdata.com/influxdb/v1.7/administration/authentication_and_authorization/">InfluxDB Authentication</a></li>
-</ul>
+<p>Finally you can configure the services (from a <code>docker-compose.yml</code>) to use loki instead of stdout for logging.</p>
+<ol>
+<li>
+<p>Add the following section to your <code>docker-compose.yml</code>
+<div class="highlight"><pre><span></span><code><span class="nt">x-logging</span><span class="p">:</span> <span class="nl">&amp;logging</span>
+  <span class="nt">driver</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">loki</span>
+  <span class="nt">options</span><span class="p">:</span>
+    <span class="nt">loki-url</span><span class="p">:</span> <span class="s">&quot;http://192.168.2.253:3100/loki/api/v1/push&quot;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Apply the logging config on your service using yaml inheritance.
+<div class="highlight"><pre><span></span><code>    <span class="nt">logging</span><span class="p">:</span>
+      <span class="nt">&lt;&lt; </span><span class="p">:</span> <span class="nv">*logging</span>   
+</code></pre></div></p>
+</li>
+</ol>
+<p><img alt="Logs in Grafana" loading="lazy" src="../../img/services/loki_logs.png?raw=true" /></p>
                 
                   
                     
@@ -1049,7 +914,7 @@ Afterwards you can go to the input section in your telegraf configuration (<code
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 6, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2021</span>
     
   </small>
 </div>
@@ -1072,7 +937,7 @@ Afterwards you can go to the input section in your telegraf configuration (<code
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../gitea/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../prometheus/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1081,7 +946,7 @@ Afterwards you can go to the input section in your telegraf configuration (<code
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Gitea
+                Prometheus
               </div>
             </div>
           </a>

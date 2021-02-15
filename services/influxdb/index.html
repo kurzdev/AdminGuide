@@ -13,14 +13,14 @@
         <meta name="author" content="https://github.com/felbinger">
       
       
-        <link rel="canonical" href="https://felbinger.github.io/AdminGuide/services/traefik/">
+        <link rel="canonical" href="https://felbinger.github.io/AdminGuide/services/influxdb/">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
       
-        <title>Traefik - Admin Guide</title>
+        <title>InfluxDB + Telegraf - Admin Guide</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#traefik" class="md-skip">
+        <a href="#telegraf-collecting-agent-on-the-host-system" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Traefik
+              InfluxDB + Telegraf
             
           </span>
         </div>
@@ -342,14 +342,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" data-md-state="indeterminate" type="checkbox" id="nav-3-1" checked>
       
       <label class="md-nav__link" for="nav-3-1">
         Proxies
@@ -366,76 +364,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Traefik
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../traefik/" class="md-nav__link">
         Traefik
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#wildcard-certificates" class="md-nav__link">
-    Wildcard Certificates
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#authentication-middlewares" class="md-nav__link">
-    Authentication Middlewares
-  </a>
-  
-    <nav class="md-nav" aria-label="Authentication Middlewares">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#basic-auth" class="md-nav__link">
-    Basic Auth
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#redirect-middleware" class="md-nav__link">
-    Redirect Middleware
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -841,12 +774,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-7" data-md-state="indeterminate" type="checkbox" id="nav-3-7" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-7" type="checkbox" id="nav-3-7" checked>
       
       <label class="md-nav__link" for="nav-3-7">
         Monitoring
@@ -875,11 +810,45 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../influxdb/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          InfluxDB + Telegraf
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         InfluxDB + Telegraf
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#telegraf-collecting-agent-on-the-host-system" class="md-nav__link">
+    Telegraf Collecting Agent on the host system
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -935,8 +904,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -945,35 +912,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#wildcard-certificates" class="md-nav__link">
-    Wildcard Certificates
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#authentication-middlewares" class="md-nav__link">
-    Authentication Middlewares
-  </a>
-  
-    <nav class="md-nav" aria-label="Authentication Middlewares">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#basic-auth" class="md-nav__link">
-    Basic Auth
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#redirect-middleware" class="md-nav__link">
-    Redirect Middleware
+  <a href="#telegraf-collecting-agent-on-the-host-system" class="md-nav__link">
+    Telegraf Collecting Agent on the host system
   </a>
   
 </li>
@@ -990,193 +930,101 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/felbinger/AdminGuide/edit/master/docs/services/traefik.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/felbinger/AdminGuide/edit/master/docs/services/influxdb.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="traefik">Traefik<a class="headerlink" href="#traefik" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p>A reverse proxy is a router which binds to the ports <code>80</code> (http) and <code>443</code> (https).
-You can access the configured services by connecting to the proxy (<code>https://domain.tld</code>) with a specific host header, which is going to be evaluated by the proxy.
-But how do you connect to your proxy with this specific host header?
-Due to the fact that you configured your dns to redirect all subdomains to your server you can simply access <code>https://phpmyadmin.domain.tld</code>.
-You will reach the reverse proxy on port 443 with the host header <code>phpmyadmin.domain.tld</code>, after evaluation the proxy will redirect the incomming request to the configured service.</p>
-</div>
-<p>Add the following configuration to your <code>docker-compose.yml</code> in the main stack:
-<div class="highlight"><pre><span></span><code>  <span class="nt">traefik</span><span class="p">:</span>
-    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">traefik:v2.4</span>
-    <span class="nt">command</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;--api.insecure=true&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;--providers.docker=true&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;--providers.docker.exposedbydefault=false&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;--providers.docker.network=proxy&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;--entrypoints.web.address=:80&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;--entrypoints.web.http.redirections.entrypoint.to=websecure&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;--entrypoints.web.http.redirections.entrypoint.scheme=https&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;--entrypoints.websecure.address=:443&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;--certificatesresolvers.myresolver.acme.tlschallenge=true&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;--certificatesresolvers.myresolver.acme.email=admin@domain.de&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json&quot;</span>
-      <span class="c1">#- &quot;--certificatesresolvers.myresolver.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;--providers.file.filename=/configs/dynamic.yml&quot;</span>
-      <span class="c1">#- &quot;--log.level=DEBUG&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;--accesslog=true&quot;</span>
-    <span class="nt">labels</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.enable=true&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.services.srv_traefik.loadbalancer.server.port=8080&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_traefik.rule=Host(`traefik.domain.de`)&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_traefik.entrypoints=websecure&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_traefik.tls=true&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_traefik.tls.certresolver=myresolver&quot;</span>
-    <span class="nt">ports</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;80:80&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;443:443&quot;</span>
-    <span class="nt">volumes</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;/srv/main/traefik/letsencrypt:/letsencrypt&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;/srv/main/traefik/dynamic.yml:/configs/dynamic.yml&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;/etc/localtime:/etc/localtime:ro&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;/var/run/docker.sock:/var/run/docker.sock:ro&quot;</span>
-    <span class="nt">networks</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">proxy</span>
-</code></pre></div></p>
-<p>Create the file <code>/srv/main/traefik/dynamic.yml</code> to require TLS version 1.2 or higher (currently only TLS 1.3):
-<div class="highlight"><pre><span></span><code><span class="nt">tls</span><span class="p">:</span>
-  <span class="nt">options</span><span class="p">:</span>
-    <span class="nt">default</span><span class="p">:</span>
-      <span class="nt">minVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">VersionTLS12</span>
-      <span class="nt">sniStrict</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-      <span class="nt">cipherSuites</span><span class="p">:</span>
-        <span class="c1"># TLS 1.3</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TLS_AES_256_GCM_SHA384</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TLS_CHACHA20_POLY1305_SHA256</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TLS_AES_128_GCM_SHA256</span>
-        <span class="c1"># TLS 1.2</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305</span>
-</code></pre></div></p>
-<p>You also need a webserver for static content e.g. your <a href="https://github.com/felbinger/AdminGuide/tree/master/error_pages">error pages</a>: 
-<div class="highlight"><pre><span></span><code>  <span class="nt">static</span><span class="p">:</span>
-    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx:stable-alpine</span>
+                  <h1>InfluxDB + Telegraf</h1>
+                
+                <p>Checkout the official pages for <a href="https://www.influxdata.com/time-series-platform/telegraf/">Telegraf</a> and
+<a href="https://www.influxdata.com/products/influxdb-overview/">InfluxDB</a>  </p>
+<div class="highlight"><pre><span></span><code>  <span class="c1"># shell: docker-compose exec influxdb influx -precision rfc3339</span>
+  <span class="nt">influxdb</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">influxdb</span>
     <span class="nt">restart</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">always</span>
-    <span class="nt">labels</span><span class="p">:</span>
-      <span class="c1"># BASIC CONFIGURATION</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.enable=true&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.services.srv_static.loadbalancer.server.port=80&quot;</span>
-
-      <span class="c1"># ERROR PAGES</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.middlewares.error40x.errors.status=403-404&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.middlewares.error40x.errors.service=srv_static&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.middlewares.error40x.errors.query=/error/{status}.html&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.middlewares.error30x.errors.status=300-308&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.middlewares.error30x.errors.service=srv_static&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.middlewares.error30x.errors.query=/error/30x.html&quot;</span>
-
-      <span class="c1"># HSTS</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.middlewares.mw_hsts.headers.frameDeny=true&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.middlewares.mw_hsts.headers.contentTypeNosniff=true&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.middlewares.mw_hsts.headers.browserXssFilter=true&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.middlewares.mw_hsts.headers.forceSTSHeader=true&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.middlewares.mw_hsts.headers.sslRedirect=true&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.middlewares.mw_hsts.headers.stsPreload=true&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.middlewares.mw_hsts.headers.stsSeconds=315360000&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.middlewares.mw_hsts.headers.stsIncludeSubdomains=true&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.middlewares.mw_hsts.headers.customRequestHeaders.X-Forwarded-Proto=https&quot;</span>
-
-      <span class="c1"># DOMAIN ROOT CONTENT</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_static_root.rule=HostRegexp(`domain.de`,</span><span class="nv"> </span><span class="s">`{subdomain:[a-z0-9]+}.domain.de`)&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_static_root.entrypoints=websecure&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_static_root.tls=true&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_static_root.tls.certresolver=myresolver&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_static_root.priority=10&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.middlewares.mw_static_root.addprefix.prefix=/domain_root/&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_static_root.middlewares=mw_hsts@docker,mw_static_root@docker,error40x@docker,error30x@docker&quot;</span>
-    <span class="nt">volumes</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;/srv/main/static/webroot:/usr/share/nginx/html/&quot;</span>
+    <span class="nt">environment</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;INFLUXDB_GRAPHITE_ENABLED=1&quot;</span>
+    <span class="c1">#volumes:</span>
+    <span class="c1">#  - &quot;influx-data:/var/lib/influxdb&quot;</span>
+    <span class="c1">#  - &quot;/srv/main/influxdb/influxdb.conf:/etc/influxdb/influxdb.conf&quot;</span>
     <span class="nt">networks</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">proxy</span>
-</code></pre></div></p>
-<p>You should also add your domain to the <a href="https://hstspreload.org/">HSTS Preload List</a>, all subdomains need to be reachable using a secure connection, so you need a wildcard certificate for this.</p>
-<p>Let's do a <a href="https://www.ssllabs.com/ssltest">ssltest</a> to see how good we are:
-<img alt="Picture of the ssltest result" loading="lazy" src="../../img/services/traefik_ssllabs_test.png?raw=true" /></p>
-<h3 id="wildcard-certificates">Wildcard Certificates<a class="headerlink" href="#wildcard-certificates" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Modify the command section of your traefik, to setup dnschallenge (remove <code>....tlschallenge=true</code>):
-   <div class="highlight"><pre><span></span><code>      <span class="c1"># e.g. for cloudflare</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;--certificatesresolvers.myresolver.acme.dnschallenge=true&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;--certificatesresolvers.myresolver.acme.dnschallenge.provider=cloudflare&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;--certificatesresolvers.myresolver.acme.dnschallenge.resolvers=1.1.1.1:53,8.8.8.8:53&quot;</span>
-</code></pre></div></li>
-<li>Modify the environment section (<a href="https://doc.traefik.io/traefik/user-guides/docker-compose/acme-dns/#use-secrets">you can also use docker secrets</a>) of your traefik, to provide the required credentials for you dns api (checkout <a href="https://doc.traefik.io/traefik/https/acme/#providers">the list of providers</a>).</li>
-<li>Configure the wildcard certificate for your services (e.g. the traefik dashboard in the labels section of the traefik service):
-   <div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_traefik.tls.domains[0].main=domain.de&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_traefik.tls.domains[0].sans=*.domain.de&quot;</span>
-</code></pre></div></li>
-</ol>
-<h3 id="authentication-middlewares">Authentication Middlewares<a class="headerlink" href="#authentication-middlewares" title="Permanent link">&para;</a></h3>
-<p>Traefik offers a lot of authentication middlewares (e.g. <a href="https://doc.traefik.io/traefik/middlewares/basicauth/">BasicAuth</a>, <a href="https://doc.traefik.io/traefik/middlewares/forwardauth/">ForwardAuth</a> (if you can provide a authentication service))</p>
-<h4 id="basic-auth">Basic Auth<a class="headerlink" href="#basic-auth" title="Permanent link">&para;</a></h4>
-<p>We are going to add a new router to our static service, which will provide files for download, behind an basic auth.
-First we have to extend our traefik service, with the htpasswd file for the service. This can be done by simply adding the following volume:
-<div class="highlight"><pre><span></span><code><span class="nn">...</span>
+      <span class="nt">monitoring</span><span class="p">:</span>
+        <span class="nt">ipv4_address</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">192.168.2.254</span>
+
+<span class="c1"># ...</span>
+
 <span class="nt">volumes</span><span class="p">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">...</span>
-  <span class="l l-Scalar l-Scalar-Plain">- &quot;/srv/main/traefik/webfiles.htpasswd:/htpasswd/webfiles&quot;</span>
-  <span class="l l-Scalar l-Scalar-Plain">...</span>
-<span class="nn">...</span>
+  <span class="nt">influx-data</span><span class="p">:</span>
 </code></pre></div>
-You can create the htpasswd file using the htpasswd utility from the apache2-utils package (at least on debian based operating systems).
-<div class="highlight"><pre><span></span><code>apt install -y apache2-utils
-htpasswd -c /srv/main/traefik/webfiles.htpasswd -c &lt;username&gt;
-</code></pre></div></p>
-<p>Now we can add the new router to our static service:
-<div class="highlight"><pre><span></span><code>    <span class="l l-Scalar l-Scalar-Plain">...</span>
-    <span class="l l-Scalar l-Scalar-Plain">labels</span><span class="p p-Indicator">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">...</span>
-      <span class="l l-Scalar l-Scalar-Plain">- &quot;traefik.http.routers.r_static_files.rule=Host(`files.domain.de`)&quot;</span>
-      <span class="l l-Scalar l-Scalar-Plain">- &quot;traefik.http.routers.r_static_files.entrypoints=websecure&quot;</span>
-      <span class="l l-Scalar l-Scalar-Plain">- &quot;traefik.http.routers.r_static_files.tls=true&quot;</span>
-      <span class="l l-Scalar l-Scalar-Plain">- &quot;traefik.http.routers.r_static_files.tls.certresolver=myresolver&quot;</span>
-      <span class="l l-Scalar l-Scalar-Plain">- &quot;traefik.http.middlewares.mw_static_files.addprefix.prefix=/static_files/&quot;</span>
-      <span class="l l-Scalar l-Scalar-Plain">- &quot;traefik.http.middlewares.mw_static_files_auth.basicauth.usersfile=/htpasswd/webfiles&quot;</span>
-      <span class="l l-Scalar l-Scalar-Plain">- &quot;traefik.http.routers.r_static_files.middlewares=mw_static_files@docker,mw_static_files_auth@docker,error40x@docker,error30x@docker&quot;</span>
-    <span class="l l-Scalar l-Scalar-Plain">...</span>
-</code></pre></div></p>
-<p>We also need to enable directory listing by creating the configuration for this uri:
-<div class="highlight"><pre><span></span><code><span class="k">server</span> <span class="p">{</span>
-    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
-    <span class="kn">server_name</span> <span class="s">localhost</span><span class="p">;</span>
+<p>Unfortunately you need to copy some file out of the container before you can use influxdb:
+<div class="highlight"><pre><span></span><code>sudo mkdir -p /srv/main/influxdb
 
-    <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
-        <span class="kn">root</span>   <span class="s">/usr/share/nginx/html</span><span class="p">;</span>
-        <span class="kn">index</span>  <span class="s">index.html</span> <span class="s">index.htm</span><span class="p">;</span>
-    <span class="p">}</span>
+sudo docker-compose up -d influxdb
 
-    <span class="kn">location</span> <span class="s">/static_files</span> <span class="p">{</span>
-        <span class="kn">root</span> <span class="s">/usr/share/nginx/html</span><span class="p">;</span>
-        <span class="kn">autoindex</span> <span class="no">on</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+sudo docker cp main_influxdb_1:/var/lib/influxdb <span class="se">\</span>
+  /srv/main/influxdb/lib
+
+sudo docker cp main_influxdb_1:/etc/influxdb/influxdb.conf <span class="se">\</span>
+  /srv/main/influxdb/influxdb.conf
 </code></pre></div></p>
-<p>Don't forget to add the created configuration to the volume section of the static service:
-<div class="highlight"><pre><span></span><code><span class="nn">...</span>
-<span class="nt">volumes</span><span class="p">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">...</span>
-  <span class="l l-Scalar l-Scalar-Plain">- &quot;/srv/main/static/nginx.conf:/etc/nginx/conf.d/default.conf&quot;</span>
-<span class="nn">...</span>
+<p>Afterwards you can remove the comments in front of the volumes and start up the container.</p>
+<h3 id="telegraf-collecting-agent-on-the-host-system">Telegraf Collecting Agent on the host system<a class="headerlink" href="#telegraf-collecting-agent-on-the-host-system" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>sudo apt install apt-transport-https wget gnupg
+wget -qO- https://repos.influxdata.com/influxdb.key <span class="p">|</span> sudo apt-key add -
+<span class="nb">echo</span> <span class="s2">&quot;deb https://repos.influxdata.com/debian buster stable&quot;</span> <span class="p">|</span> sudo tee -a /etc/apt/sources.list.d/influxdb.list
+sudo apt update
+sudo apt install telegraf
+</code></pre></div>
+<p>In terms of configuration you first have to disable the influxdb output in the <code>telegraf.conf</code>.
+We are not going to use it, because it might be overwritten on telegraf updates.
+Just search for <code>[[outputs.influxdb]]</code> and put a <code>#</code> in front of it to mark it as a comment.</p>
+<p>The telegraf daemon will try to send data to the default url which is <code>localhost:8086</code>.
+In our case, with influxdb inside the docker helper network, <code>monitoring</code> we will reach the influxdb on the ip address <code>192.168.2.254</code>.</p>
+<div class="highlight"><pre><span></span><code># configure telegraf (hostname.conf should match your hostname)
+sudo cp /etc/telegraf/telegraf.{conf,d/hostname.conf}
+sudo vim /etc/telegraf/telegraf.{conf,d/hostname.conf}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>...
+<span class="c1">###############################################################################</span>
+<span class="c1">#                            OUTPUT PLUGINS                                   #</span>
+<span class="c1">###############################################################################</span>
+
+
+<span class="c1"># Configuration for sending metrics to InfluxDB</span>
+<span class="c1">#[[outputs.influxdb]]                                                         # &lt;-- comment this out</span>
+  <span class="c1">## The full HTTP or UDP URL for your InfluxDB instance.</span>
+  <span class="c1">##</span>
+  <span class="c1">## Multiple URLs can be specified for a single cluster, only ONE of the</span>
+  <span class="c1">## urls will be written to each interval.</span>
+  <span class="c1"># urls = [&quot;unix:///var/run/influxdb.sock&quot;]</span>
+  <span class="c1"># urls = [&quot;udp://127.0.0.1:8089&quot;]</span>
+  <span class="c1"># urls = [&quot;http://127.0.0.1:8086&quot;]</span>
+...
+</code></pre></div>
+<p>Afterwards we are going to edit the copied telegraf configuration (<code>/etc/telegraf/telegraf.d/hostname.conf</code>). Just add the correct <code>urls</code> entry in the influxdb output area to get basic reporting which is enabled by default.</p>
+<div class="highlight"><pre><span></span><code>...
+<span class="c1">###############################################################################</span>
+<span class="c1">#                            OUTPUT PLUGINS                                   #</span>
+<span class="c1">###############################################################################</span>
+
+
+<span class="c1"># Configuration for sending metrics to InfluxDB</span>
+<span class="o">[[</span>outputs.influxdb<span class="o">]]</span>
+  <span class="c1">## The full HTTP or UDP URL for your InfluxDB instance.</span>
+  <span class="c1">##</span>
+  <span class="c1">## Multiple URLs can be specified for a single cluster, only ONE of the</span>
+  <span class="c1">## urls will be written to each interval.</span>
+  <span class="c1"># urls = [&quot;unix:///var/run/influxdb.sock&quot;]</span>
+  <span class="c1"># urls = [&quot;udp://127.0.0.1:8089&quot;]</span>
+  <span class="c1"># urls = [&quot;http://127.0.0.1:8086&quot;]</span>
+  <span class="nv">urls</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;http://192.168.2.254:8086&quot;</span><span class="o">]</span>                                             <span class="c1"># &lt;-- add this line</span>
+...
+</code></pre></div>
+<p>Finally you can restart the telegraf agent
+<div class="highlight"><pre><span></span><code>sudo systemctl restart telegraf
 </code></pre></div></p>
-<h3 id="redirect-middleware">Redirect Middleware<a class="headerlink" href="#redirect-middleware" title="Permanent link">&para;</a></h3>
-<p>You can also redirect a domain directly to another resource (e.g. your external webinterface of your mailserver):
-<div class="highlight"><pre><span></span><code>      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_redirect.rule=Host(`domain.de`)&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_redirect.entrypoints=websecure&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_redirect.tls=true&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_redirect.tls.certresolver=myresolver&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.middlewares.mw_redirect.redirectregex.regex=https://domain.de&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.middlewares.mw_redirect.redirectregex.replacement=https://redirecteddomain.de&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.middlewares.mw_redirect.redirectregex.permanent=true&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_redirect.middlewares=mw_redirect@docker,error40x@docker,error30x@docker&quot;</span>
-</code></pre></div></p>
+<p>You might also would like to enable <a href="https://docs.influxdata.com/influxdb/v1.7/administration/authentication_and_authorization/">authentication</a>!</p>
                 
                   
                     
@@ -1185,7 +1033,7 @@ htpasswd -c /srv/main/traefik/webfiles.htpasswd -c &lt;username&gt;
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2021</span>
     
   </small>
 </div>
@@ -1208,7 +1056,7 @@ htpasswd -c /srv/main/traefik/webfiles.htpasswd -c &lt;username&gt;
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../installation/postinstall/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../grafana/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1217,19 +1065,19 @@ htpasswd -c /srv/main/traefik/webfiles.htpasswd -c &lt;username&gt;
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Postinstall Script
+                Grafana
               </div>
             </div>
           </a>
         
         
-          <a href="../nginx-proxy/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../prometheus/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                nginx/proxy
+                Prometheus
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
