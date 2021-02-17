@@ -1114,23 +1114,23 @@ if you would rather use a minimal configuration of traefik, checkout the docs.</
     <span class="nt">networks</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">proxy</span>
 </code></pre></div></p>
-<div class="highlight"><pre><span></span><code># /srv/main/traefik/middlewares.yml 
-http:
-  middlewares:
-    mw_compress:
-      compress: true
-    mw_hsts:
-      headers:
-        contentTypeNosniff: true
-        browserXssFilter: true
-        forceSTSHeader: true
-        sslRedirect: true
-        stsPreload: true
-        stsSeconds: 315360000
-        stsIncludeSubdomains: true
-        customResponseHeaders:
-          X-Forwarded-Proto: https
-          X-Frame-Options: sameorigin
+<div class="highlight"><pre><span></span><code><span class="c1"># /srv/main/traefik/middlewares.yml </span>
+<span class="nt">http</span><span class="p">:</span>
+  <span class="nt">middlewares</span><span class="p">:</span>
+    <span class="nt">mw_compress</span><span class="p">:</span>
+      <span class="nt">compress</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+    <span class="nt">mw_hsts</span><span class="p">:</span>
+      <span class="nt">headers</span><span class="p">:</span>
+        <span class="nt">contentTypeNosniff</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+        <span class="nt">browserXssFilter</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+        <span class="nt">forceSTSHeader</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+        <span class="nt">sslRedirect</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+        <span class="nt">stsPreload</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+        <span class="nt">stsSeconds</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">315360000</span>
+        <span class="nt">stsIncludeSubdomains</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+        <span class="nt">customResponseHeaders</span><span class="p">:</span>
+          <span class="nt">X-Forwarded-Proto</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https</span>
+          <span class="nt">X-Frame-Options</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sameorigin</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># /srv/main/traefik/dynamic.yml</span>
 <span class="nt">tls</span><span class="p">:</span>
@@ -1173,8 +1173,6 @@ htpasswd -c /srv/main/traefik/webfiles.htpasswd -c &lt;username&gt;
       <span class="l l-Scalar l-Scalar-Plain">...</span>
       <span class="l l-Scalar l-Scalar-Plain">- &quot;traefik.http.routers.r_static_files.rule=Host(`files.domain.de`)&quot;</span>
       <span class="l l-Scalar l-Scalar-Plain">- &quot;traefik.http.routers.r_static_files.entrypoints=websecure&quot;</span>
-      <span class="l l-Scalar l-Scalar-Plain">- &quot;traefik.http.routers.r_static_files.tls=true&quot;</span>
-      <span class="l l-Scalar l-Scalar-Plain">- &quot;traefik.http.routers.r_static_files.tls.certresolver=myresolver&quot;</span>
       <span class="l l-Scalar l-Scalar-Plain">- &quot;traefik.http.middlewares.mw_static_files.addprefix.prefix=/static_files/&quot;</span>
       <span class="l l-Scalar l-Scalar-Plain">- &quot;traefik.http.middlewares.mw_static_files_auth.basicauth.usersfile=/htpasswd/webfiles&quot;</span>
       <span class="l l-Scalar l-Scalar-Plain">- &quot;traefik.http.routers.r_static_files.middlewares=mw_static_files@docker,mw_static_files_auth@docker,error40x@docker,error30x@docker&quot;</span>
@@ -1232,7 +1230,7 @@ htpasswd -c /srv/main/traefik/webfiles.htpasswd -c &lt;username&gt;
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 16, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 17, 2021</span>
     
   </small>
 </div>

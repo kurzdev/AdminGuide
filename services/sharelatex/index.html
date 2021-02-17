@@ -968,18 +968,18 @@
                   <h1>ShareLaTeX</h1>
                 
                 <p>ShareLaTeX requires a redis and a mongodb instance!
-<div class="highlight"><pre><span></span><code>  <span class="nt">paper</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code>  <span class="nt">sharelatex</span><span class="p">:</span>
     <span class="c1"># use latest tag for setup, use your own image (tag: with-texlive-full) after installation </span>
     <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sharelatex/sharelatex:latest</span>
     <span class="nt">restart</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">always</span>
     <span class="nt">labels</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.enable=true&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.services.srv_paper.loadbalancer.server.port=80&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_paper.rule=Host(`paper.domain.de`)&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_paper.entrypoints=websecure&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_paper.tls.certresolver=myresolver&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.services.srv_sharelatex.loadbalancer.server.port=80&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_sharelatex.rule=Host(`paper.domain.de`)&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_sharelatex.entrypoints=websecure&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_sharelatex.tls.certresolver=myresolver&quot;</span>
     <span class="nt">volumes</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/srv/storage/paper/data:/var/lib/sharelatex</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/srv/storage/sharelatex/data:/var/lib/sharelatex</span>
     <span class="nt">environment</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="s">&quot;SHARELATEX_APP_NAME=ShareLaTeX&quot;</span>
       <span class="p p-Indicator">-</span> <span class="s">&quot;SHARELATEX_MONGO_URL=mongodb://mongo/sharelatex&quot;</span>
@@ -1009,10 +1009,10 @@
 
   <span class="c1"># requirements for ShareLaTeX</span>
   <span class="nt">mongo</span><span class="p">:</span>
-    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mongo:4.0</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mongo</span>
     <span class="nt">restart</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">always</span>
     <span class="nt">volumes</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;/srv/storage/paper/mongo:/data/db&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;/srv/storage/sharelatex/mongo:/data/db&quot;</span>
     <span class="nt">healthcheck</span><span class="p">:</span>
       <span class="nt">test</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">echo &#39;db.stats().ok&#39; | mongo localhost:27017/test --quiet</span>
       <span class="nt">interval</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10s</span>
@@ -1021,11 +1021,12 @@
     <span class="nt">networks</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">database</span>
 
+  <span class="c1"># version must be locked to 5, otherwise sharelatex wont work</span>
   <span class="nt">redis</span><span class="p">:</span>
     <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">redis:5</span>
     <span class="nt">restart</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">always</span>
     <span class="nt">volumes</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;/srv/storage/paper/redis:/data&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;/srv/storage/sharelatex/redis:/data&quot;</span>
     <span class="nt">networks</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">database</span>
 </code></pre></div></p>
@@ -1041,12 +1042,12 @@
 <div class="admonition warning">
 <p>The Image will take about 8 gigabytes after installation all additional packages.</p>
 </div>
-<div class="highlight"><pre><span></span><code>screen -AmdS latex-installation <span class="s2">&quot;docker-compose exec paper tlmgr update --self; tlmgr install scheme-full&quot;</span>
+<div class="highlight"><pre><span></span><code>screen -AmdS latex-installation <span class="s2">&quot;docker-compose exec sharelatex tlmgr update --self; tlmgr install scheme-full&quot;</span>
 </code></pre></div>
 </li>
 <li>
 <p>Save the current container filesystem as docker image with tag: <code>with-texlive-full</code></p>
-<div class="highlight"><pre><span></span><code>docker commit -m <span class="s2">&quot;installing all latex packages&quot;</span> <span class="k">$(</span>docker-compose ps -q paper<span class="k">)</span> sharelatex/sharelatex:with-texlive-full
+<div class="highlight"><pre><span></span><code>docker commit -m <span class="s2">&quot;installing all latex packages&quot;</span> <span class="k">$(</span>docker-compose ps -q sharelatex<span class="k">)</span> sharelatex/sharelatex:with-texlive-full
 </code></pre></div>
 </li>
 <li>
@@ -1055,7 +1056,7 @@
 </ol>
 <h3 id="creating-an-user">Creating an user<a class="headerlink" href="#creating-an-user" title="Permanent link">&para;</a></h3>
 <p>Now you have to create an admin user by simply running this command:</p>
-<div class="highlight"><pre><span></span><code>docker-compose <span class="nb">exec</span> paper /bin/bash -c <span class="s2">&quot;cd /var/www/sharelatex; grunt user:create-admin --email=my@email.address&quot;</span>
+<div class="highlight"><pre><span></span><code>docker-compose <span class="nb">exec</span> sharelatex /bin/bash -c <span class="s2">&quot;cd /var/www/sharelatex; grunt user:create-admin --email=my@email.address&quot;</span>
 </code></pre></div>
 <p>Replace <code>my@email.address</code> with your email. You will now be given a password reset link with which you can initially set the password for the admin user.</p>
                 
@@ -1066,7 +1067,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 29, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 17, 2021</span>
     
   </small>
 </div>
