@@ -13,14 +13,14 @@
         <meta name="author" content="https://github.com/felbinger">
       
       
-        <link rel="canonical" href="https://felbinger.github.io/AdminGuide/services/calibre/">
+        <link rel="canonical" href="https://felbinger.github.io/AdminGuide/services/seafile/">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.3">
     
     
       
-        <title>Calibre - Admin Guide</title>
+        <title>Seafile - Admin Guide</title>
       
     
     
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Calibre
+              Seafile
             
           </span>
         </div>
@@ -343,16 +343,14 @@
 
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
       
       <label class="md-nav__link" for="__nav_5">
         Services
@@ -707,14 +705,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6" type="checkbox" id="__nav_5_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6" data-md-state="indeterminate" type="checkbox" id="__nav_5_6" checked>
       
       <label class="md-nav__link" for="__nav_5_6">
         Storage
@@ -766,18 +762,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../calibre/" class="md-nav__link">
         Calibre
       </a>
-      
     </li>
   
 
@@ -905,36 +894,54 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/felbinger/AdminGuide/edit/master/docs/services/calibre.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/felbinger/AdminGuide/edit/master/docs/services/seafile.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Calibre</h1>
+                  <h1>Seafile</h1>
                 
-                <p>checkout <a href="https://hub.docker.com/r/linuxserver/calibre">linuxserver/calibre</a>
-<div class="highlight"><pre><span></span><code>  <span class="nt">calibre</span><span class="p">:</span>
-    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">linuxserver/calibre-web</span>
+                <div class="highlight"><pre><span></span><code>  <span class="nt">mariadb</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mariadb</span>   
     <span class="nt">restart</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">always</span>
     <span class="nt">environment</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;PUID=1000&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;PGID=1000&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;SET_CONTAINER_TIMEZONE=true&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;CONTAINER_TIMEZONE=Europe/Berlin&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;USE_CONFIG_DIR=true&quot;</span>
-    <span class="nt">labels</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.enable=true&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.services.srv_calibre.loadbalancer.server.port=8083&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_calibre.rule=Host(`calibre.domain.de`)&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_calibre.entrypoints=websecure&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_calibre.tls.certresolver=myresolver&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;MYSQL_ROOT_PASSWORD=S3cr3T&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;MYSQL_LOG_CONSOLE=true&quot;</span>
     <span class="nt">volumes</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;/srv/storage/calibre/config:/config&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;/srv/storage/calibre/books:/books&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;/srv/storage/seafile/mysql:/var/lib/mysql&quot;</span>
     <span class="nt">networks</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">proxy</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">database</span>
-</code></pre></div></p>
+
+  <span class="nt">memcached</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">memcached</span>
+    <span class="nt">restart</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">always</span>
+    <span class="nt">entrypoint</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">memcached -m 256</span>
+    <span class="nt">networks</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">database</span>
+
+  <span class="nt">seafile</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">seafileltd/seafile-mc:latest</span>  
+    <span class="nt">restart</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">always</span>
+    <span class="nt">volumes</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;/srv/storage/seafile/data:/shared&quot;</span>
+    <span class="nt">environment</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;DB_HOST=mariadb&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;DB_ROOT_PASSWD=S3cr3T&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;TIME_ZONE=Europe/Berlin&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;SEAFILE_ADMIN_EMAIL=admin@domain.de&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;SEAFILE_ADMIN_PASSWORD=S3cr3T&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;SEAFILE_SERVER_LETSENCRYPT=false&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;SEAFILE_SERVER_HOSTNAME=seafile.domain.de&quot;</span>
+    <span class="nt">labels</span><span class="p">:</span>     
+      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.enable=true&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.services.srv_seafile.loadbalancer.server.port=80&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_seafile.rule=Host(`seafile.domain.de`)&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;traefik.http.routers.r_seafile.entrypoints=websecure&quot;</span>
+    <span class="nt">networks</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">database</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">proxy</span>
+</code></pre></div>
+<p>Unfortunately, Seafile requires root access for the database. Therefore, you should create your own database for Seafile. </p>
                 
                   
                     
@@ -943,7 +950,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 22, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2021</span>
     
   </small>
 </div>
@@ -962,39 +969,6 @@
       
         
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        <a href="../hackmd/" class="md-footer__link md-footer__link--prev" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              HackMD
-            </div>
-          </div>
-        </a>
-      
-      
-        <a href="../gitea/" class="md-footer__link md-footer__link--next" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Gitea
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
